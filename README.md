@@ -2,6 +2,6 @@
 
 ## Corso Developer Csharp
 
-Configurazione area di lavoro
+- Configurazione area di lavoro
 
-Configurazione versionamento
+- Configurazione versionamento

@@ -1,2 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿Console.WriteLine("Hello, Allison!");
+
+// questo è un commento
+
+/*
 Console.WriteLine("Hello, World!");
+/*

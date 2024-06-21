@@ -54,8 +54,8 @@ Console.WriteLine("Il numero è minore di 10");
 
     //SWITCH
 
+/*
 int giorno = 10;
-
 switch (giorno) //giorno è la condizione
 {
     case 1:
@@ -81,7 +81,7 @@ switch (giorno) //giorno è la condizione
     break;
     default:
         Console.WriteLine("Il numero non corrisponde a nessun giorno della settimana");
-
-        break;
+    break;
 
 }
+/* 

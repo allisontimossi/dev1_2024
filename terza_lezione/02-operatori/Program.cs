@@ -49,7 +49,7 @@ bool y = false;
 //and
 bool z = x && y;        //false
 
-/or
+//or
 bool w = x || y;        //true
 
 //not
@@ -68,7 +68,7 @@ assegnazione con sottrazione (-=)
 int d = 10;
 
 d += 5; // d = 15
-d -= 5  // d = 5
+d -= 5;  // d = 5
 
 // esempio di utilizzo di operatori di incremento e decremento
 

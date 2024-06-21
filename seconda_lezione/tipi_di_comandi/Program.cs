@@ -20,8 +20,9 @@ Console.WriteLine("Hello, Allison!");
 // Console.WriteLine("Premi un tasto per terminare...");
 // Console.ReadKey();
 
+Console.Write("Inserisci il tuo nome: \t");
 string nome = Console.ReadLine()!;
-Console.WriteLine(nome);
+// Console.WriteLine(nome);
 
 Console.WriteLine($"Hello, {nome}!");
 

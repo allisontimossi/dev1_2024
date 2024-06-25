@@ -26,13 +26,13 @@ int operazione = int.Parse(Console.ReadLine ());    // //definizione della varia
 switch (operazione) 
 {
     case 1:
-        Console.WriteLine("=", a + b);          //somma
+        Console.WriteLine($"= {a + b}");          //somma
     break;
     case 2:
-        Console.WriteLine("=", a - b);          //differenza
+        Console.WriteLine($"= {a - b}");          //differenza
     break;
     case 3:
-        Console.WriteLine("=", a * b);          //prodotto
+        Console.WriteLine($"= {a * b}");          //prodotto
     break;
     case 4:
         Console.WriteLine($"= {divisione}");    //divisione

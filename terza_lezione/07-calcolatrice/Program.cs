@@ -14,10 +14,11 @@ Console.WriteLine ("- per divisione digita 4");
 int somma = a + b;
 int differenza = a - b;
 int prodotto = a * b;
-int divisione = a / b; 
+double divisione = (double)a / b;
 
 
-int operazione = int.Parse(Console.ReadLine ());    // collego il valore "operazione" allo switch per far restituire il calcolo
+
+int operazione = int.Parse(Console.ReadLine ());    // collego il valore "operazione" al comando switch per far restituire il calcolo
 switch (operazione) 
 {
     case 1:
@@ -30,7 +31,7 @@ switch (operazione)
         Console.WriteLine($"{prodotto}");
     break;
     case 4:
-        Console.WriteLine($"{divisione}");
+        Console.WriteLine((divisione));
     break;
     default: 
         Console.WriteLine("Ritenta");

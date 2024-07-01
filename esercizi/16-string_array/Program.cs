@@ -7,3 +7,6 @@ foreach (string s in nomi)
 {
     Console.WriteLine($"Ciao {s}");
 }
+
+//volendo
+nomi.AddRange(new string[] { "Mario", "Luigi","Bowser"}); //per creare la lista senza scrivere nomi.Add

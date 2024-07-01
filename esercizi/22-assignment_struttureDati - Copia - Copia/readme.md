@@ -1,5 +1,5 @@
 ## VERSIONE 1
-# Esempio di elenco
+### Esempio di elenco
 ```c#
 List<string> nomi = new List<string>();
 nomi.Add("Mario");
@@ -25,7 +25,7 @@ List<string> nomi = new List<string> { "Mario", "Luigi", "Giovanni" };
 List<string> nomi = ["Mario", "Luigi", "Giovanni"];
 ```
 ## VERSIONE 2
-# NomeLista.RemoveAt(indice): rimozione del nome sorteggiato
+### NomeLista.RemoveAt(indice): rimozione del nome sorteggiato
 ```c#
 int indice = random.Next(nomi.Count); //il computer genera un nome associandolo ad un indice
 nomi.RemoveAt(indice); //il nome generato viene rimosso dalla lista
@@ -55,7 +55,7 @@ foreach (string nome in nomi)
 }
 ```
 ## VERSIONE 3
-# Utilizzo del while: la app continua a sorteggiare finchè ci sono nomi nella lista
+### Utilizzo alternativo del while: la app continua a sorteggiare finchè ci sono nomi nella lista
 ```c#
 while (nomi.Count > 0)
 {
@@ -70,7 +70,7 @@ while (nomi.Count > 0)
 }
 ```
 ## VERSIONE 4
-# "Spostamento" di un indice da una lista ad un'altra: la app toglie dalla lista il nome sorteggiato e lo aggiunge ad una seconda lista
+### "Spostamento" di un indice da una lista ad un'altra: la app toglie dalla lista il nome sorteggiato e lo aggiunge ad una seconda lista
 ```c#
 List<string> nomi = new List<string> { "Mario", "Luigi", "Giovanni" };
 List<string> sorteggiati = new List<string>(); //creazione di una lista vuota
@@ -117,7 +117,7 @@ while (nomi.Count > 0)
 }
 ```
 ## VERSIONE 5
-# Inserimento di un nuovo indice
+### Inserimento di un nuovo indice
 ```c#
 Console.Write("Nome partecipante: ");
 nome = Console.ReadLine();
@@ -184,7 +184,7 @@ do
 while (scelta != 3); // il ciclo continua finchè la scelta è diversa da 3
 ```
 ## VERSIONE 6
-# Ordinamento liste: la app permette di ordinare la lista dei partecipanti in ordine alfabetico
+### Ordinamento liste: la app permette di ordinare la lista dei partecipanti in ordine alfabetico
 ```c#
 partecipanti.Sort(); // ordinamento della lista in ordine alfabetico tramite il metodo Sort
 partecipanti.Reverse(); // ordinamento della lista in ordine alfabetico inverso tramite il metodo Reverse (da usare abbinato a partecipanti.Sort())
@@ -246,7 +246,7 @@ do
 } while (scelta != 4);
 ```
 ## VERSIONE 7
-# metodo NomeLista.Contains(nomeDaCercare): ricerca di un indice presente nella lista: 
+### metodo NomeLista.Contains(nomeDaCercare): ricerca di un indice presente nella lista: 
 
 ```c#
 Console.Write("Nome partecipante: ");
@@ -261,7 +261,7 @@ else
 }
 ```
 ## VERSIONE 8
-# Ricerca di un indice e inserimento qualora l'indice non ci sia
+### Ricerca di un indice e inserimento qualora l'indice non ci sia
 ```c#
 if (partecipanti.Contains(nome)) //ricerca e inserimento
 {
@@ -365,7 +365,7 @@ do
 ```
 
 ## VERSIONE 9
-# nomeLista.Remove(nome): eliminazione da lista
+### nomeLista.Remove(nome): eliminazione da lista
 ```c#
 Console.Write("Nome partecipante: ");
 nome = Console.ReadLine(); 
@@ -462,7 +462,7 @@ do
 } while (scelta != 6);
 ```
 ## VERSIONE 10
-# Modifica di un indice presente in lista
+### Modifica di un indice presente in lista
 ```c#
 Console.Write("Nuovo nome: "); //inserimento del nome con cui sostituire il vecchio
 string nuovoNome = Console.ReadLine();
@@ -487,5 +487,116 @@ case 6:
     {
         Console.WriteLine("Il partecipante non è presente nella lista");
     }
-    break;
+break;
+```
+## VERSIONE PERSONALE:
+```c#
+List<string> partecipanti = new List<string>();
+int scelta;
+int scelta2;
+string nome;
+
+do
+{
+    Console.WriteLine("1. Inserisci partecipante ");
+    Console.WriteLine("2. Visualizza partecipanti");
+    Console.WriteLine("3. Cerca un partecipante");
+    Console.WriteLine("4. Modifica il nome di un partecipante");
+    Console.WriteLine("5. Esci");
+
+    Console.Write("Scelta: "); //acquisizione della scelta dell'utente tra le tre opzioni possibili
+    scelta = int.Parse(Console.ReadLine ());
+
+    switch (scelta) 
+    {
+        case 1: //inserimento manuale in Lista del singolo partecipante
+            Console.Write("Inserisci il nome del partecipante: ");
+            nome = (Console.ReadLine());
+            partecipanti.Add (nome);
+        break;
+
+        case 2:
+            Console.WriteLine($"Elenco partecipanti: (totale: {partecipanti.Count})"); // stampa dell'elenco dei partecipanti inseriti manualmente
+            foreach (string partecipante in partecipanti)
+            {
+                Console.WriteLine(partecipante);
+            }
+
+            Console.WriteLine("Come vuoi ordinare la lista?"); 
+            Console.WriteLine("1. Crescente \n2. Decrescente");
+            scelta2 = Convert.ToInt32(Console.ReadLine());   
+
+                    if (scelta2 == 1) //ordinamento crescente
+                    {
+                    partecipanti.Sort();
+                        foreach (string partecipante in partecipanti)
+                        {
+                            Console.WriteLine(partecipante);
+                        }
+                    }
+                    else if (scelta2 == 2)//ordinamento decrescente
+                    {
+                    partecipanti.Sort();
+                    partecipanti.Reverse();
+                        foreach (string partecipante in partecipanti)
+                        {
+                            Console.WriteLine(partecipante);
+                        }
+                    }
+                    else
+                    {
+                            Console.WriteLine("Opzione non disponibile");
+                    }
+        break;
+
+        case 5:
+            Console.WriteLine("Arrivederci!");
+        break;
+
+        case 3:
+            Console.Write("Digita il nome di un partecipante: ");
+            nome = Console.ReadLine();
+
+            if (partecipanti.Contains(nome)) //per capire se partecipante è presente o no
+            {
+                Console.Write("Presente! Vuoi rimuovere questo partecipante? (Y): ");
+                string scelta4 = Console.ReadLine().ToUpper();
+                if (scelta4 == "Y")         //se presente lo rimuove
+                {
+                    partecipanti.Remove (nome);
+                }
+            }
+            else
+            {
+                Console.Write("Assente! Vuoi aggiungere questo partecipante? (Y): ");
+                string scelta3 = Console.ReadLine().ToUpper();
+                if (scelta3 == "Y")         //se assente lo aggiunge
+                {
+                    partecipanti.Add (nome);
+                }
+            }  
+        break;
+        case 4:
+            Console.Write("Digita il nome di un partecipante da modificare: ");
+            nome = Console.ReadLine();
+
+            if (partecipanti.Contains(nome)) //per capire se partecipante è presente o no
+            {
+                Console.Write("Nuovo nome: ");
+                string nuovoNome = Console.ReadLine();
+                int indice = partecipanti.IndexOf (nome);
+                partecipanti [indice] = nuovoNome;
+                Console.WriteLine("Il nome del partecipante è stato modificato.");
+            }
+            else
+            {
+                Console.WriteLine("Il partecipante non è presente nella lista.");
+            }
+        break;    
+        default:
+            Console.WriteLine("Scelta non valida");
+        break;
+    }
+}
+while (scelta != 5); //Esci = il ciclo continua finché non si preme 3
 ```

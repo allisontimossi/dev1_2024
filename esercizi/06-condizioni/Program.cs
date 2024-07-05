@@ -35,7 +35,7 @@ Console.WriteLine("Il numero NON è 10");
 }
 */
 
-    //IF  ELSE IF  ELSE
+//IF  ELSE IF  ELSE
 /*
 int numero = 9;
 if (numero == 10) 
@@ -52,7 +52,7 @@ Console.WriteLine("Il numero è minore di 10");
 }
 */
 
-    //SWITCH
+//SWITCH
 
 /*
 int giorno = 10;

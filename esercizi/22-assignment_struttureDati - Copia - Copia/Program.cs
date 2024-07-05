@@ -4,7 +4,6 @@ int scelta2;
 string nome;
 
 
-
 do
 {
     Console.WriteLine("1. Inserisci partecipante ");
@@ -22,6 +21,9 @@ do
             Console.Write("Inserisci il nome del partecipante: ");
             nome = (Console.ReadLine());
             partecipanti.Add (nome);
+            Console.WriteLine("Premi un tasto per continuare..");
+            Console.ReadKey(); 
+            Console.Clear();
         break;
 
         case 2:
@@ -41,6 +43,9 @@ do
                         foreach (string partecipante in partecipanti)
                         {
                             Console.WriteLine(partecipante);
+                            Console.WriteLine("Premi un tasto per continuare..");
+                            Console.ReadKey(); 
+                            Console.Clear();
                         }
                     }
                     else if (scelta2 == 2)//ordinamento decrescente
@@ -50,11 +55,17 @@ do
                         foreach (string partecipante in partecipanti)
                         {
                             Console.WriteLine(partecipante);
+                            Console.WriteLine("Premi un tasto per continuare..");
+                            Console.ReadKey(); 
+                            Console.Clear();
                         }
                     }
                     else
                     {
                             Console.WriteLine("Opzione non disponibile");
+                            Console.WriteLine("Premi un tasto per continuare..");
+                            Console.ReadKey(); 
+                            Console.Clear();
                     }
         break;
 
@@ -73,6 +84,9 @@ do
                 if (scelta4 == "Y")         //se presente lo rimuove
                 {
                     partecipanti.Remove (nome);
+                    Console.WriteLine("Premi un tasto per continuare..");
+                    Console.ReadKey(); 
+                    Console.Clear();
                 }
             }
             else
@@ -82,6 +96,9 @@ do
                 if (scelta3 == "Y")         //se assente lo aggiunge
                 {
                     partecipanti.Add (nome);
+                    Console.WriteLine("Premi un tasto per continuare..");
+                    Console.ReadKey(); 
+                    Console.Clear();
                 }
             }  
         break;
@@ -96,14 +113,23 @@ do
                 int indice = partecipanti.IndexOf (nome);
                 partecipanti [indice] = nuovoNome;
                 Console.WriteLine("Il nome del partecipante è stato modificato.");
+                Console.WriteLine("Premi un tasto per continuare..");
+                Console.ReadKey(); 
+                Console.Clear();
             }
             else
             {
                 Console.WriteLine("Il partecipante non è presente nella lista.");
+                Console.WriteLine("Premi un tasto per continuare..");
+                Console.ReadKey(); 
+                Console.Clear();
             }
         break;    
         default:
             Console.WriteLine("Scelta non valida");
+            Console.WriteLine("Premi un tasto per continuare..");
+            Console.ReadKey(); 
+            Console.Clear();
         break;
     }
 }

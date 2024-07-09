@@ -6,7 +6,7 @@ string nome;
 
 do
 {
-    Console.WriteLine("1. Inserisci partecipante ");
+    Console.WriteLine("1. Inserisci partecipante");
     Console.WriteLine("2. Visualizza partecipanti");
     Console.WriteLine("3. Cerca un partecipante");
     Console.WriteLine("4. Modifica il nome di un partecipante");

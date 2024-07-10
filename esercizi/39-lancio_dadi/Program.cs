@@ -1,4 +1,4 @@
-﻿﻿Console.Clear();
+﻿Console.Clear();
 
 int somma = 0;
 int  [] frequenza= new int [6]; // Inizializza un array di 6 elementi a 0
@@ -16,7 +16,7 @@ for (int i = 0; i < numLanci; i++)
     risultatoLancio[i] = random.Next(1, 7);
     Console.WriteLine($"Dado {i + 1}: è uscito il {risultatoLancio[i]}");
     somma += risultatoLancio[i];
-    frequenza [risultatoLancio[i]-1]++; // Incrementa la frequenza del numero ottenuto
+    frequenza [risultatoLancio[i]-1]++; // Incrementa la frequenza del numero ottenuto (numero ottenuto: 5, incrementa di 1 (++) alla posizione 4 (5 -1))
 }
 
 Console.WriteLine($"La somma dei dadi usciti è {somma}");

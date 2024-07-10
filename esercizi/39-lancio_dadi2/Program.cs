@@ -1,7 +1,16 @@
-﻿﻿Console.Clear();
+﻿Console.Clear();
 
 int somma = 0;
 int  [] frequenza= new int [6]; // Inizializza un array di 6 elementi a 0
+
+List<int> 1 = new List<int>();
+List<int> 2 = new List<int>();
+List<int> 3 = new List<int>();
+List<int> 4 = new List<int>();
+List<int> 5 = new List<int>();
+List<int> 6 = new List<int>();
+
+
 
 Console.WriteLine("Quanti dadi vuoi lanciare?");
 int numLanci = int.Parse(Console.ReadLine()); //input del numero di dadi che vogliamo lanciare

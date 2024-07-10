@@ -363,13 +363,10 @@ nomi.Add ("Luigi");
 nomi.Add ("Bowser");
 nomi.Add ("Ginevra");
 
-//in generale, per aggiungere basta: 
-nomeLista.Add("");
-//oppure
+//shortcut
 List<string> nomi = new List<string>{"Mario", "Luigi", "Giovanni"};
 
-
-//in caso di interi
+//interi
 List<int> numeri = new List<int>();
 numeri.Add(10);
 numeri.Add(20);
@@ -378,6 +375,57 @@ numeri.Add(30);
 List<int> numeri = new List<int>{10, 20, 30};
 
 nomeLista.Count // conta il numero di elementi all'interno
-Console.WriteLine($"Il numero di elementi è {numeri.Count}");
+Console.WriteLine($"Il numero di elementi è {numeri.Count}"); //stampa del numero di elementi che compongono la lista
+
+//creazione di una nuova lista come sottolista di una già esistente
+List<string> listaPrincipale = new [];
+int split = listaPrincipale.Count /2
+List<string> sottolista = listaPrincipale.GetRange (0, split); 
+//primo valore indica l'indice della lista principale da cui vogliamo partire
+// il secondo valore dice quanto "scendere" nella lista madre
+
+nomeLista.Sort(); // ordina gli indici (A-Z, ordine crescente)
+
+nomeLista.Sort();    //ordinamento decrescente: prima vanno ordinati..
+nomeLista.Reverse(); //.. poi messi in ordine decrescente
+
+nomeLista.Contains()  //viene ricercato l'indice all'interno della lista
+
+
+nomeLista.Add();
+nomeLista.Remove ();
 ```
 </details>
+
+#### Combinazione Ricerca + Aggiunta/Rimozione
+
+<details>
+    <summary> Visualizza il codice </summary>
+
+```c#
+Console.Write("Digita il nome di un partecipante da modificare: ");
+nome = Console.ReadLine();
+if (partecipanti.Contains(nome)) //per capire se partecipante è presente o no
+    {
+        string scelta1 = Console.ReadLine().ToUpper();
+        if (scelta1 == "Y")         
+        {
+            partecipanti.Remove (nome); //RIMOZIONE: se presente lo rimuove
+        }
+    }
+    else
+    {
+        Console.Write("Assente! Vuoi aggiungere questo partecipante? (Y): ");
+        string scelta2 = Console.ReadLine().ToUpper();
+        if (scelta2 == "Y")         
+        {
+            partecipanti.Add (nome);    //AGGIUNTA: se assente lo aggiunge
+        }
+    } 
+```
+
+
+
+
+
+

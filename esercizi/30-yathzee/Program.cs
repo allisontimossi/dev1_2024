@@ -42,6 +42,7 @@ while (dadiUguali)
             {
                 case 1:
                     Console.WriteLine("Quale dado vuoi rilanciare?");
+                    int rilancio1 = int.Parse(Console.ReadLine());
                     dadi[rilancio1 - 1] = random.Next(1,7);
 
                 break;

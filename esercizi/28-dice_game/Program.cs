@@ -4,6 +4,14 @@
 int puntiPc = 100;
 Random random = new Random();
 
+string path = @"punteggi.txt";
+if (File.Exists(path))
+{
+    string [] punteggi = File.ReadAllLines(path);
+    puntiUmano = int.Parse(punteggi[0]);
+    puntiPc = int.Parse(punteggi[1]);
+}
+
 while (puntiUmano > 0 && puntiPc > 0)
 
 // ogni turno, ciascuno lancia due dadi
@@ -21,12 +29,16 @@ while (puntiUmano > 0 && puntiPc > 0)
     int sommaPc = dado1Pc + dado2Pc;
 
     var table = new Table();
-    table.AddColumn(":game_die:");
-    table.AddColumn(":man_dancing:");
-    table.AddColumn(":desktop_computer:");
+        table.Border = TableBorder.Rounded;
+        table.AddColumn(":game_die:");
 
-    table.AddRow("[bold] Lancio [/]", $"  {dado1Umano} e {dado2Umano}", $" {dado1Pc} e {dado2Pc}");
-    table.AddRow("[bold] Totale [/]", $"{sommaUmano}", $"{sommaPc}");
+        table.AddColumn(":man_dancing:");
+
+        table.AddColumn(":desktop_computer:");
+
+        table.AddRow("[bold] Lancio [/]", $"{dado1Umano} e {dado2Umano}", $"{dado1Pc} e {dado2Pc}");
+
+        table.AddRow("[bold] Totale [/]", $"{sommaUmano}", $"{sommaPc}");
 
     AnsiConsole.Write(table);
 
@@ -45,17 +57,43 @@ while (puntiUmano > 0 && puntiPc > 0)
     {
         Console.WriteLine("Parità in questo turno.");
     }
+    var rule = new Rule("Dice Game");
+    rule.Justification = Justify.Left;
+
+    AnsiConsole.Write(rule);
+AnsiConsole.Write(new BarChart()
+    .Width(60)
+    .Label("[blue bold underline]Punteggi[/]")
+    .CenterLabel()
+    .AddItem("Uomo", puntiUmano, Color.Yellow)
+    .AddItem("PC", puntiPc, Color.Green));
+
+    var rule2 = new Rule();
+    AnsiConsole.Write(rule2);
 
     AnsiConsole.MarkupLine($"Punti :man_dancing:: {puntiUmano}, Punti :desktop_computer:: {puntiPc}");
     Console.WriteLine("Premi un tasto per il prossimo turno...");
     Console.ReadKey();
+
+    File.WriteAllLines(path, new string[]
+    {
+        puntiUmano.ToString(), puntiPc.ToString()
+    });
 }
 
 if (puntiUmano <= 0)
 {
-    Console.WriteLine("L'umano ha perso!");
+    AnsiConsole.Write(
+    new FigletText("Ho vinto!")
+        .Centered()
+        .Color(Color.Blue));
+
 }
 else
 {
-    Console.WriteLine("Il PC ha perso!");
+AnsiConsole.Write(
+    new FigletText("Hai vinto!")
+        .Centered()
+        .Color(Color.Blue));
 }
+

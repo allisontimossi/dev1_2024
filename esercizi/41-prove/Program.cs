@@ -1,4 +1,4 @@
-﻿﻿using Spectre.Console; //dobbiamo mettercelo per forza
+﻿using Spectre.Console; //dobbiamo mettercelo per forza
 int choice;
 int scelta2;
 string nome;
@@ -16,9 +16,9 @@ do
     Console.WriteLine("2. Visualizza partecipanti");
     Console.WriteLine("3. Cerca un partecipante");
     Console.WriteLine("4. Modifica il nome di un partecipante");
-    Console.WriteLine("5. Esci");
+    Console.WriteLine("5. Forma squadre");
+    Console.WriteLine("6. Esci");
 
-    Console.Write("Scelta: ");
 
     Console.Write("Scelta: "); 
     choice = int.Parse(Console.ReadLine ());

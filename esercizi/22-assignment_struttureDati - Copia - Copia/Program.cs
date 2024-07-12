@@ -1,4 +1,9 @@
-﻿List<string> partecipanti = new List<string>();
+﻿
+string path =@"file.txt";
+string[] lines = File.ReadAllLines(path);
+string [] partecipanti = new string [lines.Length]; 
+
+
 int scelta;
 int scelta2;
 string nome;
@@ -6,6 +11,8 @@ string nome;
 
 do
 {
+    Console.Clear();
+
     Console.WriteLine("1. Inserisci partecipante");
     Console.WriteLine("2. Visualizza partecipanti");
     Console.WriteLine("3. Cerca un partecipante");
@@ -19,8 +26,10 @@ do
     {
         case 1: //inserimento manuale in Lista del singolo partecipante
             Console.Write("Inserisci il nome del partecipante: ");
-            nome = (Console.ReadLine());
-            partecipanti.Add (nome);
+            index = (Console.ReadLine());
+
+            File.AppendAllText(path,  partecipanti[index] + "\n");  
+            
             Console.WriteLine("Premi un tasto per continuare..");
             Console.ReadKey(); 
             Console.Clear();

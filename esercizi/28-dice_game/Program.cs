@@ -5,12 +5,13 @@ int puntiPc = 100;
 Random random = new Random();
 
 string path = @"punteggi.txt";
-if (File.Exists(path))
+string[] punteggi = File.ReadAllLines(path);
+ //dobbiamo inserire almeno due valori di partenza!
+if (!File.Exists(path))
 {
-    string [] punteggi = File.ReadAllLines(path);
-    puntiUmano = int.Parse(punteggi[0]);
-    puntiPc = int.Parse(punteggi[1]);
+    File.Create(path).Close();
 }
+
 
 while (puntiUmano > 0 && puntiPc > 0)
 
@@ -75,11 +76,11 @@ AnsiConsole.Write(new BarChart()
     Console.WriteLine("Premi un tasto per il prossimo turno...");
     Console.ReadKey();
 
-    File.WriteAllLines(path, new string[]
-    {
-        puntiUmano.ToString(), puntiPc.ToString()
-    });
+    File.AppendAllText(path, $"Punteggi uomo: {puntiUmano}\n Punteggi macchina {puntiPc}\n");
+
 }
+
+
 
 if (puntiUmano <= 0)
 {
@@ -97,3 +98,4 @@ AnsiConsole.Write(
         .Color(Color.Blue));
 }
 
+File.AppendAllText(path, $"Punti PC: {puntiPc}\nPunti Umano: {puntiUmano}\n");

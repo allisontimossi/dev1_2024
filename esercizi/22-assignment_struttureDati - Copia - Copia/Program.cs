@@ -1,4 +1,5 @@
-﻿
+﻿using Spectre.Console;
+
 string path =@"file.txt";
 string[] lines = File.ReadAllLines(path);
 string [] partecipanti = new string [lines.Length]; 
@@ -9,33 +10,30 @@ int scelta2;
 string nome;
 
 
-do
-{
+
     Console.Clear();
 
-    Console.WriteLine("1. Inserisci partecipante");
-    Console.WriteLine("2. Visualizza partecipanti");
-    Console.WriteLine("3. Cerca un partecipante");
-    Console.WriteLine("4. Modifica il nome di un partecipante");
-    Console.WriteLine("5. Esci");
+    scelta = AnsiConsole.Prompt(
+    new SelectionPrompt<string>()
 
-    Console.Write("Scelta: "); //acquisizione della scelta dell'utente tra le tre opzioni possibili
-    scelta = int.Parse(Console.ReadLine ());
+            .PageSize(10)
+            .MoreChoicesText("[grey](Move up and down to reveal more choice)[/]")
+            .AddChoices(new[] {
+                "1. Inserisci partecipante/i","2. Visualizza partecipanti","3. Cerca un partecipante","4. Modifica il nome di un partecipante","5. Crea squadre", "6. Esci dal programma"
+            }));
 
     switch (scelta) 
     {
-        case 1: //inserimento manuale in Lista del singolo partecipante
+        case "1. Inserisci partecipante/i": //inserimento manuale in Lista del singolo partecipante
             Console.Write("Inserisci il nome del partecipante: ");
-            index = (Console.ReadLine());
-
-            File.AppendAllText(path,  partecipanti[index] + "\n");  
+ 
             
             Console.WriteLine("Premi un tasto per continuare..");
             Console.ReadKey(); 
             Console.Clear();
         break;
 
-        case 2:
+        case "2. Visualizza partecipanti":
             Console.WriteLine($"Elenco partecipanti: (totale: {partecipanti.Count})"); // stampa dell'elenco dei partecipanti inseriti manualmente
             foreach (string partecipante in partecipanti)
             {
@@ -78,11 +76,11 @@ do
                     }
         break;
 
-        case 5:
+        case "6. Esci dal programma":
             Console.WriteLine("Arrivederci!");
         break;
 
-        case 3:
+        case "3. Cerca un partecipante":
             Console.Write("Digita il nome di un partecipante: ");
             nome = Console.ReadLine();
 
@@ -111,8 +109,8 @@ do
                 }
             }  
         break;
-        case 4:
-            Console.Write("Digita il nome di un partecipante da modificare: ");
+        case "4. Modifica il nome di un partecipante":
+            Console.Write("4. Modifica il nome di un partecipante: ");
             nome = Console.ReadLine();
 
             if (partecipanti.Contains(nome)) //per capire se partecipante è presente o no
@@ -141,8 +139,8 @@ do
             Console.Clear();
         break;
     }
-}
-while (scelta != 5); //Esci = il ciclo continua finché non si preme 3
+
+ //Esci = il ciclo continua finché non si preme 3
 
 //ordinare la lista dei partecipanti in ordine alfabetico -> metodo "sort" che restituisce la lista 
 //[es: partecipanti.Sort()]

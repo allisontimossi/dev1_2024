@@ -1,5 +1,5 @@
 ﻿using Spectre.Console; //dobbiamo mettercelo per forza
-int choice;
+int scelta;
 int scelta2;
 string nome;
 List<string> classe = [];
@@ -12,17 +12,14 @@ Random random = new Random ();
 bool primasquadra = true;
 do
 {
-    Console.WriteLine("1. Inserisci partecipante");
-    Console.WriteLine("2. Visualizza partecipanti");
-    Console.WriteLine("3. Cerca un partecipante");
-    Console.WriteLine("4. Modifica il nome di un partecipante");
-    Console.WriteLine("5. Forma squadre");
-    Console.WriteLine("6. Esci");
-
-
-    Console.Write("Scelta: "); 
-    choice = int.Parse(Console.ReadLine ());
-    switch (choice) 
+    scelta = AnsiConsole.Prompt(
+        new SelectionPrompt<string>()
+            .PageSize(10)
+            .MoreChoicesText("[grey](Move up and down to reveal more choice)[/]")
+            .AddChoices(new[] {
+                "1. Inserisci partecipante/i","2. Visualizza partecipanti","3. Cerca un partecipante","4. Modifica il nome di un partecipante","5. Crea squadre", "6. Esci dal programma"
+                })); 
+    switch (scelta) 
     {
         case 1: //inserimento manuale in Lista del singolo partecipante
             Console.Write("Inserisci il nome del partecipante: ");
@@ -175,6 +172,6 @@ do
         break;
     }
 }
-while (choice != 6);
+while (scelta != 6);
 
     

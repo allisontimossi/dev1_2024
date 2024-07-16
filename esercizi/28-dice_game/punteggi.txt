@@ -1,2 +1,790 @@
 100
 100
+Punteggi uomo: 100
+ Punteggi macchina 99
+Punteggi uomo: 100
+ Punteggi macchina 90
+Punteggi uomo: 98
+ Punteggi macchina 90
+Punteggi uomo: 96
+ Punteggi macchina 90
+Punteggi uomo: 96
+ Punteggi macchina 90
+Punteggi uomo: 92
+ Punteggi macchina 90
+Punteggi uomo: 89
+ Punteggi macchina 90
+Punteggi uomo: 89
+ Punteggi macchina 90
+Punteggi uomo: 89
+ Punteggi macchina 85
+Punteggi uomo: 89
+ Punteggi macchina 85
+Punteggi uomo: 84
+ Punteggi macchina 85
+Punteggi uomo: 78
+ Punteggi macchina 85
+Punteggi uomo: 77
+ Punteggi macchina 85
+Punteggi uomo: 73
+ Punteggi macchina 85
+Punteggi uomo: 70
+ Punteggi macchina 85
+Punteggi uomo: 70
+ Punteggi macchina 85
+Punteggi uomo: 67
+ Punteggi macchina 85
+Punteggi uomo: 66
+ Punteggi macchina 85
+Punteggi uomo: 63
+ Punteggi macchina 85
+Punteggi uomo: 63
+ Punteggi macchina 84
+Punteggi uomo: 63
+ Punteggi macchina 79
+Punteggi uomo: 59
+ Punteggi macchina 79
+Punteggi uomo: 59
+ Punteggi macchina 79
+Punteggi uomo: 59
+ Punteggi macchina 78
+Punteggi uomo: 59
+ Punteggi macchina 78
+Punteggi uomo: 59
+ Punteggi macchina 75
+Punteggi uomo: 57
+ Punteggi macchina 75
+Punteggi uomo: 57
+ Punteggi macchina 71
+Punteggi uomo: 57
+ Punteggi macchina 69
+Punteggi uomo: 57
+ Punteggi macchina 68
+Punteggi uomo: 57
+ Punteggi macchina 63
+Punteggi uomo: 57
+ Punteggi macchina 61
+Punteggi uomo: 57
+ Punteggi macchina 57
+Punteggi uomo: 57
+ Punteggi macchina 56
+Punteggi uomo: 54
+ Punteggi macchina 56
+Punteggi uomo: 54
+ Punteggi macchina 56
+Punteggi uomo: 54
+ Punteggi macchina 55
+Punteggi uomo: 54
+ Punteggi macchina 52
+Punteggi uomo: 54
+ Punteggi macchina 49
+Punteggi uomo: 54
+ Punteggi macchina 48
+Punteggi uomo: 54
+ Punteggi macchina 47
+Punteggi uomo: 54
+ Punteggi macchina 39
+Punteggi uomo: 54
+ Punteggi macchina 39
+Punteggi uomo: 54
+ Punteggi macchina 39
+Punteggi uomo: 54
+ Punteggi macchina 32
+Punteggi uomo: 54
+ Punteggi macchina 32
+Punteggi uomo: 50
+ Punteggi macchina 32
+Punteggi uomo: 50
+ Punteggi macchina 32
+Punteggi uomo: 50
+ Punteggi macchina 29
+Punteggi uomo: 50
+ Punteggi macchina 26
+Punteggi uomo: 47
+ Punteggi macchina 26
+Punteggi uomo: 47
+ Punteggi macchina 24
+Punteggi uomo: 47
+ Punteggi macchina 20
+Punteggi uomo: 41
+ Punteggi macchina 20
+Punteggi uomo: 41
+ Punteggi macchina 18
+Punteggi uomo: 38
+ Punteggi macchina 18
+Punteggi uomo: 38
+ Punteggi macchina 15
+Punteggi uomo: 38
+ Punteggi macchina 13
+Punteggi uomo: 38
+ Punteggi macchina 4
+Punteggi uomo: 34
+ Punteggi macchina 4
+Punteggi uomo: 34
+ Punteggi macchina -1
+Punti PC: -1
+Punti Umano: 34
+Punteggi uomo: 100
+ Punteggi macchina 97
+Punteggi uomo: 99
+ Punteggi macchina 97
+Punteggi uomo: 99
+ Punteggi macchina 95
+Punteggi uomo: 97
+ Punteggi macchina 95
+Punteggi uomo: 91
+ Punteggi macchina 95
+Punteggi uomo: 86
+ Punteggi macchina 95
+Punteggi uomo: 83
+ Punteggi macchina 95
+Punteggi uomo: 81
+ Punteggi macchina 95
+Punteggi uomo: 81
+ Punteggi macchina 90
+Punteggi uomo: 100
+ Punteggi macchina 92
+Punteggi uomo: 99
+ Punteggi macchina 92
+Punteggi uomo: 96
+ Punteggi macchina 92
+Punteggi uomo: 92
+ Punteggi macchina 92
+Punteggi uomo: 90
+ Punteggi macchina 92
+Punteggi uomo: 86
+ Punteggi macchina 92
+Punteggi uomo: 84
+ Punteggi macchina 92
+Punteggi uomo: 84
+ Punteggi macchina 91
+Punteggi uomo: 84
+ Punteggi macchina 91
+Punteggi uomo: 84
+ Punteggi macchina 89
+Punteggi uomo: 84
+ Punteggi macchina 89
+Punteggi uomo: 78
+ Punteggi macchina 89
+Punteggi uomo: 77
+ Punteggi macchina 89
+Punteggi uomo: 73
+ Punteggi macchina 89
+Punteggi uomo: 73
+ Punteggi macchina 88
+Punteggi uomo: 73
+ Punteggi macchina 86
+Punteggi uomo: 71
+ Punteggi macchina 86
+Punteggi uomo: 70
+ Punteggi macchina 86
+Punteggi uomo: 69
+ Punteggi macchina 86
+Punteggi uomo: 69
+ Punteggi macchina 86
+Punteggi uomo: 69
+ Punteggi macchina 82
+Punteggi uomo: 63
+ Punteggi macchina 82
+Punteggi uomo: 58
+ Punteggi macchina 82
+Punteggi uomo: 58
+ Punteggi macchina 78
+Punteggi uomo: 57
+ Punteggi macchina 78
+Punteggi uomo: 55
+ Punteggi macchina 78
+Punteggi uomo: 55
+ Punteggi macchina 77
+Punteggi uomo: 55
+ Punteggi macchina 70
+Punteggi uomo: 54
+ Punteggi macchina 70
+Punteggi uomo: 52
+ Punteggi macchina 70
+Punteggi uomo: 47
+ Punteggi macchina 70
+Punteggi uomo: 47
+ Punteggi macchina 68
+Punteggi uomo: 46
+ Punteggi macchina 68
+Punteggi uomo: 46
+ Punteggi macchina 68
+Punteggi uomo: 43
+ Punteggi macchina 68
+Punteggi uomo: 38
+ Punteggi macchina 68
+Punteggi uomo: 38
+ Punteggi macchina 64
+Punteggi uomo: 34
+ Punteggi macchina 64
+Punteggi uomo: 33
+ Punteggi macchina 64
+Punteggi uomo: 33
+ Punteggi macchina 61
+Punteggi uomo: 31
+ Punteggi macchina 61
+Punteggi uomo: 31
+ Punteggi macchina 58
+Punteggi uomo: 27
+ Punteggi macchina 58
+Punteggi uomo: 27
+ Punteggi macchina 51
+Punteggi uomo: 27
+ Punteggi macchina 46
+Punteggi uomo: 26
+ Punteggi macchina 46
+Punteggi uomo: 26
+ Punteggi macchina 46
+Punteggi uomo: 26
+ Punteggi macchina 44
+Punteggi uomo: 21
+ Punteggi macchina 44
+Punteggi uomo: 21
+ Punteggi macchina 36
+Punteggi uomo: 17
+ Punteggi macchina 36
+Punteggi uomo: 13
+ Punteggi macchina 36
+Punteggi uomo: 13
+ Punteggi macchina 36
+Punteggi uomo: 13
+ Punteggi macchina 35
+Punteggi uomo: 13
+ Punteggi macchina 34
+Punteggi uomo: 13
+ Punteggi macchina 32
+Punteggi uomo: 13
+ Punteggi macchina 29
+Punteggi uomo: 11
+ Punteggi macchina 29
+Punteggi uomo: 11
+ Punteggi macchina 23
+Punteggi uomo: 8
+ Punteggi macchina 23
+Punteggi uomo: 4
+ Punteggi macchina 23
+Punteggi uomo: 2
+ Punteggi macchina 23
+Punteggi uomo: -1
+ Punteggi macchina 23
+Fine partita:10:16
+Punteggi uomo: 100
+ Punteggi macchina 93
+Punteggi uomo: 100
+ Punteggi macchina 93
+Punteggi uomo: 100
+ Punteggi macchina 89
+Punteggi uomo: 100
+ Punteggi macchina 88
+Punteggi uomo: 100
+ Punteggi macchina 85
+Punteggi uomo: 100
+ Punteggi macchina 84
+Punteggi uomo: 97
+ Punteggi macchina 84
+Punteggi uomo: 97
+ Punteggi macchina 83
+Punteggi uomo: 95
+ Punteggi macchina 83
+Punteggi uomo: 95
+ Punteggi macchina 82
+Punteggi uomo: 95
+ Punteggi macchina 74
+Punteggi uomo: 94
+ Punteggi macchina 74
+Punteggi uomo: 92
+ Punteggi macchina 74
+Punteggi uomo: 92
+ Punteggi macchina 73
+Punteggi uomo: 89
+ Punteggi macchina 73
+Punteggi uomo: 87
+ Punteggi macchina 73
+Punteggi uomo: 85
+ Punteggi macchina 73
+Punteggi uomo: 85
+ Punteggi macchina 70
+Punteggi uomo: 82
+ Punteggi macchina 70
+Punteggi uomo: 77
+ Punteggi macchina 70
+Punteggi uomo: 77
+ Punteggi macchina 69
+Punteggi uomo: 77
+ Punteggi macchina 69
+Punteggi uomo: 77
+ Punteggi macchina 67
+Punteggi uomo: 74
+ Punteggi macchina 67
+Punteggi uomo: 74
+ Punteggi macchina 61
+Punteggi uomo: 69
+ Punteggi macchina 61
+Punteggi uomo: 69
+ Punteggi macchina 60
+Punteggi uomo: 69
+ Punteggi macchina 60
+Punteggi uomo: 66
+ Punteggi macchina 60
+Punteggi uomo: 64
+ Punteggi macchina 60
+Punteggi uomo: 64
+ Punteggi macchina 60
+Punteggi uomo: 64
+ Punteggi macchina 59
+Punteggi uomo: 59
+ Punteggi macchina 59
+Punteggi uomo: 59
+ Punteggi macchina 55
+Punteggi uomo: 58
+ Punteggi macchina 55
+Punteggi uomo: 58
+ Punteggi macchina 55
+Punteggi uomo: 57
+ Punteggi macchina 55
+Punteggi uomo: 56
+ Punteggi macchina 55
+Punteggi uomo: 56
+ Punteggi macchina 54
+Punteggi uomo: 52
+ Punteggi macchina 54
+Punteggi uomo: 52
+ Punteggi macchina 53
+Punteggi uomo: 52
+ Punteggi macchina 52
+Punteggi uomo: 52
+ Punteggi macchina 44
+Punteggi uomo: 52
+ Punteggi macchina 36
+Punteggi uomo: 52
+ Punteggi macchina 33
+Punteggi uomo: 50
+ Punteggi macchina 33
+Punteggi uomo: 48
+ Punteggi macchina 33
+Punteggi uomo: 39
+ Punteggi macchina 33
+Punteggi uomo: 39
+ Punteggi macchina 33
+Punteggi uomo: 38
+ Punteggi macchina 33
+Punteggi uomo: 38
+ Punteggi macchina 28
+Punteggi uomo: 36
+ Punteggi macchina 28
+Punteggi uomo: 33
+ Punteggi macchina 28
+Punteggi uomo: 30
+ Punteggi macchina 28
+Punteggi uomo: 27
+ Punteggi macchina 28
+Punteggi uomo: 23
+ Punteggi macchina 28
+Punteggi uomo: 23
+ Punteggi macchina 24
+Punteggi uomo: 18
+ Punteggi macchina 24
+Punteggi uomo: 18
+ Punteggi macchina 22
+Punteggi uomo: 16
+ Punteggi macchina 22
+Punteggi uomo: 16
+ Punteggi macchina 22
+Punteggi uomo: 7
+ Punteggi macchina 22
+Punteggi uomo: 5
+ Punteggi macchina 22
+Punteggi uomo: 5
+ Punteggi macchina 15
+Punteggi uomo: 5
+ Punteggi macchina 13
+Punteggi uomo: 5
+ Punteggi macchina 12
+Punteggi uomo: 5
+ Punteggi macchina 11
+Punteggi uomo: 5
+ Punteggi macchina 9
+Punteggi uomo: 3
+ Punteggi macchina 9
+Punteggi uomo: 3
+ Punteggi macchina 7
+Punteggi uomo: 3
+ Punteggi macchina 5
+Punteggi uomo: 2
+ Punteggi macchina 5
+Punteggi uomo: 2
+ Punteggi macchina 2
+Punteggi uomo: 2
+ Punteggi macchina 1
+Punteggi uomo: -1
+ Punteggi macchina 1
+Fine partita: 10:20
+; numero turni: 75Punteggi uomo: 100
+ Punteggi macchina 97
+Punteggi uomo: 98
+ Punteggi macchina 97
+Punteggi uomo: 95
+ Punteggi macchina 97
+Punteggi uomo: 92
+ Punteggi macchina 97
+Punteggi uomo: 89
+ Punteggi macchina 97
+Punteggi uomo: 87
+ Punteggi macchina 97
+Punteggi uomo: 87
+ Punteggi macchina 97
+Punteggi uomo: 87
+ Punteggi macchina 94
+Punteggi uomo: 87
+ Punteggi macchina 90
+Punteggi uomo: 81
+ Punteggi macchina 90
+Punteggi uomo: 81
+ Punteggi macchina 85
+Punteggi uomo: 81
+ Punteggi macchina 82
+Punteggi uomo: 76
+ Punteggi macchina 82
+Punteggi uomo: 73
+ Punteggi macchina 82
+Punteggi uomo: 71
+ Punteggi macchina 82
+Punteggi uomo: 71
+ Punteggi macchina 81
+Punteggi uomo: 71
+ Punteggi macchina 75
+Punteggi uomo: 67
+ Punteggi macchina 75
+Punteggi uomo: 67
+ Punteggi macchina 70
+Punteggi uomo: 65
+ Punteggi macchina 70
+Punteggi uomo: 60
+ Punteggi macchina 70
+Punteggi uomo: 60
+ Punteggi macchina 67
+Punteggi uomo: 60
+ Punteggi macchina 66
+Punteggi uomo: 57
+ Punteggi macchina 66
+Punteggi uomo: 57
+ Punteggi macchina 65
+Punteggi uomo: 57
+ Punteggi macchina 63
+Punteggi uomo: 57
+ Punteggi macchina 62
+Punteggi uomo: 57
+ Punteggi macchina 62
+Punteggi uomo: 54
+ Punteggi macchina 62
+Punteggi uomo: 47
+ Punteggi macchina 62
+Punteggi uomo: 43
+ Punteggi macchina 62
+Punteggi uomo: 43
+ Punteggi macchina 62
+Punteggi uomo: 40
+ Punteggi macchina 62
+Punteggi uomo: 40
+ Punteggi macchina 62
+Punteggi uomo: 40
+ Punteggi macchina 60
+Punteggi uomo: 40
+ Punteggi macchina 52
+Punteggi uomo: 40
+ Punteggi macchina 46
+Punteggi uomo: 40
+ Punteggi macchina 42
+Punteggi uomo: 40
+ Punteggi macchina 39
+Punteggi uomo: 40
+ Punteggi macchina 34
+Punteggi uomo: 36
+ Punteggi macchina 34
+Punteggi uomo: 36
+ Punteggi macchina 29
+Punteggi uomo: 36
+ Punteggi macchina 26
+Punteggi uomo: 35
+ Punteggi macchina 26
+Punteggi uomo: 32
+ Punteggi macchina 26
+Punteggi uomo: 29
+ Punteggi macchina 26
+Punteggi uomo: 29
+ Punteggi macchina 26
+Punteggi uomo: 29
+ Punteggi macchina 26
+Punteggi uomo: 29
+ Punteggi macchina 24
+Punteggi uomo: 29
+ Punteggi macchina 21
+Punteggi uomo: 29
+ Punteggi macchina 19
+Punteggi uomo: 29
+ Punteggi macchina 17
+Punteggi uomo: 22
+ Punteggi macchina 17
+Punteggi uomo: 21
+ Punteggi macchina 17
+Punteggi uomo: 21
+ Punteggi macchina 17
+Punteggi uomo: 19
+ Punteggi macchina 17
+Punteggi uomo: 12
+ Punteggi macchina 17
+Punteggi uomo: 11
+ Punteggi macchina 17
+Punteggi uomo: 11
+ Punteggi macchina 16
+Punteggi uomo: 9
+ Punteggi macchina 16
+Punteggi uomo: 5
+ Punteggi macchina 16
+Punteggi uomo: 4
+ Punteggi macchina 16
+Punteggi uomo: 2
+ Punteggi macchina 16
+Punteggi uomo: 2
+ Punteggi macchina 15
+Punteggi uomo: -1
+ Punteggi macchina 15
+Punteggi uomo: 99
+ Punteggi macchina 100
+Punteggi uomo: 96
+ Punteggi macchina 100
+Punteggi uomo: 96
+ Punteggi macchina 99
+Punteggi uomo: 93
+ Punteggi macchina 99
+Punteggi uomo: 93
+ Punteggi macchina 99
+Punteggi uomo: 93
+ Punteggi macchina 95
+Punteggi uomo: 92
+ Punteggi macchina 95
+Punteggi uomo: 89
+ Punteggi macchina 95
+Punteggi uomo: 89
+ Punteggi macchina 90
+Punteggi uomo: 88
+ Punteggi macchina 90
+Punteggi uomo: 88
+ Punteggi macchina 86
+Punteggi uomo: 85
+ Punteggi macchina 86
+Punteggi uomo: 85
+ Punteggi macchina 78
+Punteggi uomo: 85
+ Punteggi macchina 77
+Punteggi uomo: 84
+ Punteggi macchina 77
+Punteggi uomo: 83
+ Punteggi macchina 77
+Punteggi uomo: 83
+ Punteggi macchina 74
+Punteggi uomo: 79
+ Punteggi macchina 74
+Punteggi uomo: 79
+ Punteggi macchina 73
+Punteggi uomo: 79
+ Punteggi macchina 70
+Punteggi uomo: 79
+ Punteggi macchina 69
+Punteggi uomo: 76
+ Punteggi macchina 69
+Punteggi uomo: 76
+ Punteggi macchina 66
+Punteggi uomo: 73
+ Punteggi macchina 66
+Punteggi uomo: 73
+ Punteggi macchina 65
+Punteggi uomo: 72
+ Punteggi macchina 65
+Punteggi uomo: 72
+ Punteggi macchina 65
+Punteggi uomo: 69
+ Punteggi macchina 65
+Punteggi uomo: 65
+ Punteggi macchina 65
+Punteggi uomo: 65
+ Punteggi macchina 65
+Punteggi uomo: 62
+ Punteggi macchina 65
+Punteggi uomo: 62
+ Punteggi macchina 65
+Punteggi uomo: 59
+ Punteggi macchina 65
+Punteggi uomo: 59
+ Punteggi macchina 63
+Punteggi uomo: 57
+ Punteggi macchina 63
+Punteggi uomo: 57
+ Punteggi macchina 62
+Punteggi uomo: 55
+ Punteggi macchina 62
+Punteggi uomo: 55
+ Punteggi macchina 59
+Punteggi uomo: 47
+ Punteggi macchina 59
+Punteggi uomo: 47
+ Punteggi macchina 53
+Punteggi uomo: 41
+ Punteggi macchina 53
+Punteggi uomo: 41
+ Punteggi macchina 50
+Punteggi uomo: 38
+ Punteggi macchina 50
+Punteggi uomo: 38
+ Punteggi macchina 49
+Punteggi uomo: 33
+ Punteggi macchina 49
+Punteggi uomo: 33
+ Punteggi macchina 45
+Punteggi uomo: 33
+ Punteggi macchina 41
+Punteggi uomo: 33
+ Punteggi macchina 41
+Punteggi uomo: 33
+ Punteggi macchina 40
+Punteggi uomo: 33
+ Punteggi macchina 39
+Punteggi uomo: 33
+ Punteggi macchina 35
+Punteggi uomo: 29
+ Punteggi macchina 35
+Punteggi uomo: 29
+ Punteggi macchina 32
+Punteggi uomo: 29
+ Punteggi macchina 28
+Punteggi uomo: 29
+ Punteggi macchina 23
+Punteggi uomo: 21
+ Punteggi macchina 23
+Punteggi uomo: 18
+ Punteggi macchina 23
+Punteggi uomo: 14
+ Punteggi macchina 23
+Punteggi uomo: 14
+ Punteggi macchina 22
+Punteggi uomo: 14
+ Punteggi macchina 21
+Punteggi uomo: 14
+ Punteggi macchina 17
+Punteggi uomo: 14
+ Punteggi macchina 14
+Punteggi uomo: 14
+ Punteggi macchina 10
+Punteggi uomo: 14
+ Punteggi macchina 10
+Punteggi uomo: 14
+ Punteggi macchina 8
+Punteggi uomo: 12
+ Punteggi macchina 8
+Punteggi uomo: 11
+ Punteggi macchina 8
+Punteggi uomo: 11
+ Punteggi macchina 0
+Fine partita: 10:40
+; numero turni: 68Partite vinte da te: 0; Partite vinte dal Pc: 1Punteggi uomo: 98
+ Punteggi macchina 100
+Punteggi uomo: 98
+ Punteggi macchina 95
+Punteggi uomo: 98
+ Punteggi macchina 94
+Punteggi uomo: 98
+ Punteggi macchina 87
+Punteggi uomo: 97
+ Punteggi macchina 87
+Punteggi uomo: 97
+ Punteggi macchina 83
+Punteggi uomo: 94
+ Punteggi macchina 83
+Punteggi uomo: 94
+ Punteggi macchina 75
+Punteggi uomo: 94
+ Punteggi macchina 71
+Punteggi uomo: 93
+ Punteggi macchina 71
+Punteggi uomo: 91
+ Punteggi macchina 71
+Punteggi uomo: 91
+ Punteggi macchina 69
+Punteggi uomo: 91
+ Punteggi macchina 67
+Punteggi uomo: 89
+ Punteggi macchina 67
+Punteggi uomo: 89
+ Punteggi macchina 64
+Punteggi uomo: 89
+ Punteggi macchina 63
+Punteggi uomo: 89
+ Punteggi macchina 57
+Punteggi uomo: 89
+ Punteggi macchina 51
+Punteggi uomo: 87
+ Punteggi macchina 51
+Punteggi uomo: 86
+ Punteggi macchina 51
+Punteggi uomo: 85
+ Punteggi macchina 51
+Punteggi uomo: 85
+ Punteggi macchina 47
+Punteggi uomo: 85
+ Punteggi macchina 42
+Punteggi uomo: 85
+ Punteggi macchina 41
+Punteggi uomo: 85
+ Punteggi macchina 39
+Punteggi uomo: 81
+ Punteggi macchina 39
+Punteggi uomo: 81
+ Punteggi macchina 33
+Punteggi uomo: 77
+ Punteggi macchina 33
+Punteggi uomo: 72
+ Punteggi macchina 33
+Punteggi uomo: 72
+ Punteggi macchina 26
+Punteggi uomo: 72
+ Punteggi macchina 24
+Punteggi uomo: 69
+ Punteggi macchina 24
+Punteggi uomo: 69
+ Punteggi macchina 20
+Punteggi uomo: 68
+ Punteggi macchina 20
+Punteggi uomo: 68
+ Punteggi macchina 19
+Punteggi uomo: 68
+ Punteggi macchina 14
+Punteggi uomo: 65
+ Punteggi macchina 14
+Punteggi uomo: 61
+ Punteggi macchina 14
+Punteggi uomo: 60
+ Punteggi macchina 14
+Punteggi uomo: 60
+ Punteggi macchina 13
+Punteggi uomo: 60
+ Punteggi macchina 12
+Punteggi uomo: 56
+ Punteggi macchina 12
+Punteggi uomo: 56
+ Punteggi macchina 7
+Punteggi uomo: 54
+ Punteggi macchina 7
+Punteggi uomo: 49
+ Punteggi macchina 7
+Punteggi uomo: 49
+ Punteggi macchina 1
+Punteggi uomo: 49
+ Punteggi macchina 1
+Punteggi uomo: 49
+ Punteggi macchina 1
+Punteggi uomo: 49
+ Punteggi macchina -6
+Fine partita: 10:41;
+ numero turni: 49
+Partite vinte da te: 0; Partite vinte dal Pc: 1

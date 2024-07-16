@@ -3,13 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
-    <RootNamespace>_22_assignment_struttureDati</RootNamespace>
+    <RootNamespace>_56_spectre_menu_sottomenu</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="spectre.console" Version="0.49.1" />
-  </ItemGroup>
 
 </Project>

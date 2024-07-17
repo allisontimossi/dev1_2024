@@ -35,16 +35,18 @@ do
                     .PageSize(10)
                     .MoreChoicesText("[grey](Move up and down to reveal more choice)[/]")
                     .AddChoices(new[] {
-                        "1. Inserisci partecipante/i","2. Modifica il nome di un partecipante","3. Elimina"
+                        "1. Inserisci il nome del partecipante: ","2. Modifica il nome di un partecipante","3. Elimina"
                 }));
                 switch (edita)
                 {
+
                 case "1. Inserisci il nome del partecipante: ":
-                    Console.Write("Inserisci il nome del partecipante: ");
+                    Console.Write("1. Inserisci il nome del partecipante: ");
                     partecipante = (Console.ReadLine());
                     aula.Add (partecipante);
 
                     if (File.ReadAllLines(path).Contains(partecipante))
+
                     {
                         Console.Clear();
                         Console.WriteLine ("Nome già presente");

@@ -4,7 +4,7 @@
 -  [] Chiedere all'utente se ha intenzione di essere Codificatore o Decodificatore
 
 ## Wishlist
--  [] Mermaid
+-  [x] Mermaid
 -  [] Rendere l'interfaccia appetibile con Spectre
 -  [] Possibilità di salvare il nome dell'utente e il suo punteggio (inventare un sistema per punteggio (basato sul numero di turni?))
 -  [] Se c'è tempo creare Versione 2.0 dove l'utente genera il codice e il computer lo indovina
@@ -18,7 +18,7 @@
 
 ```mermaid
 flowchart TD
-    A(Welcome! \n Let's play MasterMind) -->|print: rules| B{{code generated: \n CPU picks 4 random colours}}
+    A(Welcome! \n Let's play MasterMind) -->|print: rules| B{{code generated: \n CPU picks 4 random colours from a 6 colours palette}}
     B --loop--> C([new attemp: \n input guess code])
     C --> D(if 1° guess colour == 1° CPU's colour)
     D --true \n black dot--> E(if 2° guess colour == 2° CPU's colour)    

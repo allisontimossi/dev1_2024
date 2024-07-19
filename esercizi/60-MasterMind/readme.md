@@ -20,4 +20,8 @@
 flowchart LR
     id1([Mastermind])
 
+flowchart LR
+    id1>print: "Welcome! Let's play Mastermind"]
+flowchart LR
+    id1>print: "I will select a random 4-colours from a palette made of 6 colours.]
 ```

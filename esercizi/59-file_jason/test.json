@@ -1,20 +1,20 @@
 [
     {
-    "nome": "antonio",
-    "cognome": "rossi",
-    "età": 20,
-    "indirizzo" : {
-        "via": "via roma",
-        "città": "Milano"
-    }
+        "nome": "antonio",
+        "cognome": "rossi",
+        "età": 20,
+        "indirizzo" : {
+            "via": "via roma",
+            "città": "Milano"
+        }
     },
     {
-    "nome": "mario",
-    "cognome": "verdi",
-    "età": 30,
-    "indirizzo" : {
-        "via": "via milano",
-        "città": "Roma"
-        }
+        "nome": "mario",
+        "cognome": "verdi",
+        "età": 30,
+        "indirizzo" : {
+            "via": "via milano",
+            "città": "Roma"
+            }
     }
 ]

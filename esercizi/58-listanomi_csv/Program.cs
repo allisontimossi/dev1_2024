@@ -1,9 +1,8 @@
 ﻿
+string path = @"test.csv"; //creazione del file
 
-string path = @"test.csv";
 
-
-if (!File.Exists(path))
+if (!File.Exists(path)) //rende persistenti i dati - se manca, il programma "cancella" il testo presente nel file
 {
     File.Create(path).Close();
 }

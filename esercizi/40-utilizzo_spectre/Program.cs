@@ -22,3 +22,11 @@ var favorites = AnsiConsole.Prompt(
             {
                 "Allison", "Mattia", "Ginevra", "Daniele", "Silvano", "Serghej", "Matteo",
             }));
+
+List<string> aula = new List<string>();
+new SelectionPrompt<string>()
+        
+                    .PageSize(aula.Count)
+                    .MoreChoicesText("[grey](Move up and down to reveal more choice)[/]")
+                    .AddChoices(aula);
+

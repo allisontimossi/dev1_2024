@@ -1,4 +1,4 @@
-﻿using Spectre.Console;
+﻿﻿using Spectre.Console;
 
 int attempts = 10;
 int round = 1;
@@ -34,9 +34,6 @@ var rule = new Rule("Mastermind Game");
 
 while (attempts > 0)
 {
-    int white = 0;
-    int black = 0;
-
             for (int j = 0; j < guessCode.Length; j++)
             {   
                 AnsiConsole.WriteLine("\nScegli il tuo codice: ");
@@ -48,29 +45,51 @@ while (attempts > 0)
 
                     Console.Clear();
                     ourCode = string.Join(" ", guessCode);
-                    //AnsiConsole.WriteLine($"\n{PcCode}"); //!!! DA TOGLIERE
+                    AnsiConsole.WriteLine($"\n{PcCode}"); //!!! DA TOGLIERE
                     AnsiConsole.WriteLine(ourCode);
             }
 
     round++;
     attempts--;
+    
 
-    for (int b = 0; b < 4; b++)                 
+    int white = 0, black = 0;
+
+    bool[] visited = new bool[4];
+    bool[] guessVisited = new bool[4];
+
+    for (int i = 0; i < 4; i++)                 
     {
-        if (guessCode[b] == secretCode[b])
-            {
-                black++;
-            }
-        bool contains = guessCode.Contains(secretCode[b]);   
-        if (contains == true && guessCode[b] != secretCode[b])
-            {
-                white++;
-            }
-        if (contains != true && guessCode[b] != secretCode[b])
-            {
-                Console.WriteLine("");
-            }   
+        if (guessCode[i] == secretCode[i])
+        {
+            black++;
+            visited [i] = true;
+            guessVisited [i] = true;
+        }
+        /*
+        bool contains = guessCode.Contains(secretCode[i]);   
+        if (contains != true && guessCode[i] != secretCode[i])
+        {
+            Console.WriteLine("");
+        }  
+        */   
     }
+    for (int i = 0; i < 4; i++)
+    {
+        if (!guessVisited[i])
+        {
+            for (int j = 0; j < 4; j++)
+            {
+                if (!visited[j] && guessCode [i] == secretCode [j])
+                {
+                    white++;
+                    visited [j] = true;
+                    break;
+                }
+            }
+        }
+    }      
+    
         //hint
         Console.Write(""+ Emoji.Known.BlackCircle);
         Console.Write($": {black} " );
@@ -97,4 +116,3 @@ while (attempts > 0)
         AnsiConsole.WriteLine($"\nRitenta, hai ancora {attempts} tentativi.");
     }
 }
-

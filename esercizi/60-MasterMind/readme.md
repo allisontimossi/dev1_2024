@@ -1,20 +1,36 @@
 ## MasterMind: progettazione
 
--  [] Generare una lista di colori tra cui il Codificatore potrà scegliere
--  [] Chiedere all'utente se ha intenzione di essere Codificatore o Decodificatore
+-  [x] Generare una lista di colori tra cui il Codificatore potrà scegliere
+-  [ ] Chiedere all'utente se ha intenzione di essere Codificatore o Decodificatore
 
 ## Wishlist
 -  [x] Mermaid
--  [] Rendere l'interfaccia appetibile con Spectre
--  [] Possibilità di salvare il nome dell'utente e il suo punteggio (inventare un sistema per punteggio (basato sul numero di turni?))
--  [] Se c'è tempo creare Versione 2.0 dove l'utente genera il codice e il computer lo indovina
+-  [ ] Rendere l'interfaccia appetibile con un panel
+-  [ ] Possibilità di salvare il nome dell'utente e il suo punteggio (inventare un sistema per punteggio (basato sul numero di turni?))
+-  [ ] Implementare funzioni
+-  [ ] Livelli di difficoltà
 
+### Versione 1.0: capire la logica inserendo i confronti manualmente
+-  [ ] Chiedere all'utente il suo nome: rendere persistente questa info con anche il suo punteggio alla fine del gioco
+-  [x] Generare una lista di colori tra cui il Codificatore potrà scegliere
+-  [x] Generare singolarmente i colori estratti dalla CPU
+-  [x] Creare singolarmente menu multiselezione per scelta colori
+-  [x] Ciclo while [break: numero tentativi: 10; codiceCpu = codiceSegreto]: comparazione tra codice manuale (16 if)
 
-### Versione 1.0: scelgo di essere il decodificatore
--  [] Chiedere all'utente il suo nome: rendere persistente questa info con anche il suo punteggio alla fine del gioco
--  [] Il codificatore genera random la combinazione di colori: ci chiede di fare la nostra prima mossa
--  [] Inserimento dei colori (forse numeri da 1 a 6): ciclo while [codificatore = tentativi]
--  [] Feedback Codificatore
+### Versione 2.0: una volta capire la logica dietro ai confronti manuali, sintetizzarli tramite cicli for
+-  [ ] Chiedere all'utente il suo nome: rendere persistente questa info con anche il suo punteggio alla fine del gioco
+-  [x] Generare una lista di colori tra cui il Codificatore potrà scegliere
+-  [x] Generare  i colori estratti dalla CPU e inserirli in un array
+-  [x] Creare  menu multiselezione per scelta colori e inserimento in un array
+-  [x] Ciclo while [break: numero tentativi: 10; codiceCpu = codiceSegreto]: comparazione con for
+
+Nota: non sto trovando un metodo per evitare il bug con doppio colore. Pertanto impongo come regola che il codice è di colori tutti diversi.
+### Versione 3.0: implementazione ricerca con dizionari
+-  [ ] Chiedere all'utente il suo nome: rendere persistente questa info con anche il suo punteggio alla fine del gioco
+-  [x] Generare una lista di colori tra cui il Codificatore potrà scegliere 
+-  [x] Generare  i colori estratti dalla CPU CON DIZIONARIO
+-  [x] Creare singolarmente menu multiselezione per scelta colori
+-  [x] Ciclo while [break: numero tentativi: 10; codiceCpu = codiceSegreto]: comparazione con for
 
 ```mermaid
 flowchart TD

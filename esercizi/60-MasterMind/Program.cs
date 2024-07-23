@@ -45,10 +45,10 @@ while (attempts > 0)
                     .PageSize(palette.Count)
 
                     .AddChoices(palette));
-                    Console.Clear();
 
+                    Console.Clear();
                     ourCode = string.Join(" ", guessCode);
-                    AnsiConsole.WriteLine($"\n{PcCode}"); //!!! DA TOGLIERE
+                    //AnsiConsole.WriteLine($"\n{PcCode}"); //!!! DA TOGLIERE
                     AnsiConsole.WriteLine(ourCode);
             }
 
@@ -73,14 +73,14 @@ while (attempts > 0)
     }
         //hint
         Console.Write(""+ Emoji.Known.BlackCircle);
-        Console.WriteLine($": {black}");
+        Console.Write($": {black} " );
         Console.Write(""+ Emoji.Known.WhiteCircle);
         Console.Write($": {white}");
 
     //risultati del round
     if (ourCode == PcCode)
     {
-        AnsiConsole.WriteLine("\nHai vinto!");
+        AnsiConsole.WriteLine($"\nHai vinto in {round} turni!");
         break;
     }
     else if (attempts == 0)

@@ -1,7 +1,8 @@
 ﻿﻿using Spectre.Console;
 
+
 int attempts = 10;
-int round = 1;
+int round = 0;
 string PcCode = "";
 string ourCode = "";
 
@@ -18,6 +19,9 @@ List<string> palette = new List<string>{giallo, viola, blu, verde, rosso, aranci
 string [] secretCode = new string [4];
 string [] guessCode = new string [4];   
 
+string [] dots = new string [10];
+string [] hints = new string [10];
+
 //generazione del codice segreto
 for (int i = 0; i < secretCode.Length; i++) 
 {
@@ -25,36 +29,39 @@ for (int i = 0; i < secretCode.Length; i++)
     secretCode [i] = palette[code.Next(0, 7)];
 }
 PcCode = string.Join(" ", secretCode);    
-AnsiConsole.Write(PcCode);
 
-Console.Clear();
-var rule = new Rule("Mastermind Game");
+//titolo
+var rule = new Rule($"Mastermind Game {giallo}{rosso}{verde}{blu}");
     rule.LeftJustified();
     AnsiConsole.Write(rule);
 
+//tentativi
 while (attempts > 0)
 {
-            for (int j = 0; j < guessCode.Length; j++)
-            {   
-                AnsiConsole.WriteLine("\nScegli il tuo codice: ");
-                guessCode [j] = AnsiConsole.Prompt(
-                    new SelectionPrompt<string>()
-                    .PageSize(palette.Count)
+    //metterci il titolo
+    for (int j = 0; j < guessCode.Length; j++)
+    {   
+        AnsiConsole.WriteLine("\nScegli il tuo codice: ");
+        guessCode [j] = AnsiConsole.Prompt(
+            new SelectionPrompt<string>()
+            .PageSize(palette.Count)
 
-                    .AddChoices(palette));
+            .AddChoices(palette));
 
-                    Console.Clear();
-                    ourCode = string.Join(" ", guessCode);
-                    AnsiConsole.WriteLine($"\n{PcCode}"); //!!! DA TOGLIERE
-                    AnsiConsole.WriteLine(ourCode);
-            }
-
+            Console.Clear();
+            ourCode = string.Join(" ", guessCode);
+            //AnsiConsole.WriteLine($"\n{PcCode}"); //!!! DA TOGLIERE
+            
+            AnsiConsole.WriteLine(ourCode);
+    }
+    dots[round] = ourCode;
+    
     round++;
     attempts--;
-    
 
+//hint
     int white = 0, black = 0;
-
+    
     bool[] visited = new bool[4];
     bool[] guessVisited = new bool[4];
 
@@ -65,14 +72,7 @@ while (attempts > 0)
             black++;
             visited [i] = true;
             guessVisited [i] = true;
-        }
-        /*
-        bool contains = guessCode.Contains(secretCode[i]);   
-        if (contains != true && guessCode[i] != secretCode[i])
-        {
-            Console.WriteLine("");
         }  
-        */   
     }
     for (int i = 0; i < 4; i++)
     {
@@ -88,13 +88,20 @@ while (attempts > 0)
                 }
             }
         }
-    }      
-    
-        //hint
-        Console.Write(""+ Emoji.Known.BlackCircle);
-        Console.Write($": {black} " );
-        Console.Write(""+ Emoji.Known.WhiteCircle);
-        Console.Write($": {white}");
+    } 
+    string hint = $"{Emoji.Known.BlackCircle}: {black} - {Emoji.Known.WhiteCircle}: {white}";      
+    hints[round - 1] = hint;
+    //tabella
+
+    var table = new Table();
+    table.AddColumn ("Round");
+    table.AddColumn ("Pedine");
+    table.AddColumn ("Suggerimenti");
+    for (int i = 0; i <= dots.Length; i++)
+    {
+        table.AddRow(i + 1, dots[i], hints[i]); 
+    }
+    AnsiConsole.Write(table);
 
     //risultati del round
     if (ourCode == PcCode)

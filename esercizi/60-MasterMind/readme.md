@@ -23,14 +23,9 @@
 -  [x] Generare  i colori estratti dalla CPU e inserirli in un array
 -  [x] Creare  menu multiselezione per scelta colori e inserimento in un array
 -  [x] Ciclo while [break: numero tentativi: 10; codiceCpu = codiceSegreto]: comparazione con for
+-  [ ] Possibilità di tenere i risultati tracciati tramite tabella
 
-Nota: non sto trovando un metodo per evitare il bug con doppio colore. Pertanto impongo come regola che il codice è di colori tutti diversi.
-### Versione 3.0: implementazione ricerca con dizionari
--  [ ] Chiedere all'utente il suo nome: rendere persistente questa info con anche il suo punteggio alla fine del gioco
--  [x] Generare una lista di colori tra cui il Codificatore potrà scegliere 
--  [x] Generare  i colori estratti dalla CPU CON DIZIONARIO
--  [x] Creare singolarmente menu multiselezione per scelta colori
--  [x] Ciclo while [break: numero tentativi: 10; codiceCpu = codiceSegreto]: comparazione con for
+
 
 ```mermaid
 flowchart TD

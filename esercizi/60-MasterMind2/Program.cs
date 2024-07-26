@@ -1,78 +1,75 @@
-﻿﻿﻿﻿using Spectre.Console;
-
+﻿﻿
+using Microsoft.VisualBasic;
+using Spectre.Console;
 
 internal class Program
 {
+    static string[] secretCode = new string[4];
+    static string[] guessCode = new string[4];
+
+    //creazione della palette colori con emoji
+    static string giallo = "" + Emoji.Known.YellowCircle;
+    static string viola = "" + Emoji.Known.PurpleCircle;
+    static string blu = "" + Emoji.Known.BlueCircle;
+    static string verde = "" + Emoji.Known.GreenCircle;
+    static string rosso = "" + Emoji.Known.RedCircle;
+    static string arancione = "" + Emoji.Known.OrangeCircle;
+    static string marrone = "" + Emoji.Known.BrownCircle;
+    static List<string> palette = new List<string> { giallo, viola, blu, verde, rosso, arancione, marrone };
+    static List <string> chosenPalette = new List<string> {};
+
+    static int attempts = 0;
+    static int colours = 0;
+    static int round = 0;
+    // conversione codici giocatori in stringhe
+    static string PcCode = "";
+    static string ourCode = "";
+
+    //array per i dati in tabella
+    static string[] dots = new string[attempts];
+    static string[] hints = new string[attempts];
+
     private static void Main(string[] args)
     {
-        Console.Clear();
-        int attempts = 10;
-        int score = attempts*10;
-        int round = 0;
-        string PcCode = "";
-        string ourCode = "";
-
-        //creazione della palette colori con emoji
-        string giallo = "" + Emoji.Known.YellowCircle;
-        string viola = "" + Emoji.Known.PurpleCircle;
-        string blu = "" + Emoji.Known.BlueCircle;
-        string verde = "" + Emoji.Known.GreenCircle;
-        string rosso = "" + Emoji.Known.RedCircle;
-        string arancione = "" + Emoji.Known.OrangeCircle;
-        string marrone = "" + Emoji.Known.BrownCircle;
-        List<string> palette = new List<string> { giallo, viola, blu, verde, rosso, arancione, marrone };
-
-        string[] secretCode = new string[4];
-        string[] guessCode = new string[4];
-
-        string[] dots = new string[10];
-        string[] hints = new string[10];
-
         string path = @"punteggi.csv";
         if (!File.Exists(path)) //rende persistenti i dati - se manca, il programma "cancella" il testo presente nel file
         {
             File.Create(path).Close();
         }
         
-        DateTime now = DateTime.Now;
-        int currentDate = now.Day;
-        int currentMonth = now.Month;
-        int currentHour = now.Hour;
-        int currentMinute = now.Minute;
-
-        //Menu iniziale
+        //titolo di gioco 
+        Console.Clear();
         var rule = new Rule($"Mastermind Game {giallo}{rosso}{verde}{blu}");
-            rule.LeftJustified();
-            AnsiConsole.Write(rule);
-            AnsiConsole.WriteLine("");
+        rule.LeftJustified();
+        AnsiConsole.Write(rule);
 
+        //salvataggio del nome giocatore e scelta "difficoltà"
         AnsiConsole.MarkupLine("[bold]Benvenuto a Mastermind![/]");;
         var name = AnsiConsole.Prompt(new TextPrompt<string>("Contro chi sto giocando?"));
         AnsiConsole.WriteLine("");
 
-        //generazione del codice segreto
-        for (int i = 0; i < secretCode.Length; i++)
-        {
-            Random code = new Random();
-            secretCode[i] = palette[code.Next(0, 7)];
-        }
-        PcCode = string.Join(" ", secretCode);
+        attempts = AnsiConsole.Prompt(new TextPrompt<int>("In quanti turni pensi di battermi?")); //scelta turni
+        
+        colours = AnsiConsole.Prompt(new TextPrompt<int>("Con quanti colori vuoi giocare? (1-7)"));
+        chosenPalette = palette.GetRange(0, colours);
 
         //tentativi
         while (attempts > 0)
         {
+            GenerateSecretCode(); 
+
             for (int j = 0; j < guessCode.Length; j++)
             {
-
                 AnsiConsole.WriteLine("\n\nScegli il tuo codice: ");
                 guessCode[j] = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                    .PageSize(palette.Count)
-                    .AddChoices(palette));
+                    .PageSize(chosenPalette.Count)
+                    .AddChoices(chosenPalette));
                 Console.Clear();
                 ourCode = string.Join(" ", guessCode);
-                Console.WriteLine($"\n{ourCode}");
-                AnsiConsole.WriteLine($"\n{PcCode}"); 
+                Console.WriteLine($"\n{ourCode}\n");
+                
+                AnsiConsole.WriteLine($"\n{PcCode}"); //Se si vuol barare
             }
 
             dots[round] = ourCode;
@@ -114,7 +111,6 @@ internal class Program
             hints[round - 1] = hint;
             
             //tabella
-
             var table = new Table();
             table.AddColumn("Round");
             table.AddColumn("Pedine");
@@ -123,14 +119,15 @@ internal class Program
             {
                 table.AddRow(i.ToString(), dots[i-1], hints[i-1]);
             }
-            
+
             Console.Clear();
             AnsiConsole.WriteLine("");
             AnsiConsole.Write(rule);
+
             AnsiConsole.Write(table);
 
             //risultati del round
-
+            int score = attempts*10;
             if (ourCode == PcCode)
             {
                 AnsiConsole.WriteLine($"\nHai vinto in {round} turni!");
@@ -147,21 +144,22 @@ internal class Program
                 {
                     case "Sì":
                     attempts = 10;
+                    
                     Console.Clear();
                     break;
                     case "No":
                     Console.WriteLine("Ciao ciao!");
+                    attempts = 0;
                     Console.Clear();
                     break;
                 }
-                break;
             }
             else if (attempts == 0)
             {
                 AnsiConsole.WriteLine("\nMi dispiace, ma hai perso!");
                 File.AppendAllText(path, $"\n{score} - {name} - {currentDate}/{currentMonth}-{currentHour}:{currentMinute}");
                 AnsiConsole.WriteLine($"Il codice era {PcCode}");
-                //Menu restart
+                
                 AnsiConsole.WriteLine($"Vuoi giocare di nuovo?");
                 var reStart = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
@@ -173,12 +171,13 @@ internal class Program
                 switch (reStart)
                 {
                     case "Sì":
-                    attempts = 10;
-                    Console.Clear();
+                        attempts = 10;
+
+                        Console.Clear();
                     break;
-                    case "No":
-                    Console.WriteLine("Ciao ciao!");
-                    Console.Clear();
+                    case "No":   
+                        attempts = 0;
+                        Console.Clear();
                     break;
                 }
             }
@@ -190,7 +189,17 @@ internal class Program
             {
                 AnsiConsole.WriteLine($"\nRitenta, hai ancora {attempts} tentativi.");
             }
-
         }
     }
+
+    static void GenerateSecretCode()
+    {
+        Random code = new Random();
+        for (int i = 0; i < secretCode.Length; i++)
+        {
+            secretCode[i] = chosenPalette[code.Next(0, colours)];
+        }
+        PcCode = string.Join(" ", secretCode);
+    }
+
 }

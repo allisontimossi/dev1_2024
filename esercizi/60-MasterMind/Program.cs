@@ -9,6 +9,7 @@ internal class Program
         int attempts = 0;
         int score = attempts*10;
         int round = 0;
+
         string PcCode = "";
         string ourCode = "";
 
@@ -21,11 +22,11 @@ internal class Program
         string arancione = "" + Emoji.Known.OrangeCircle;
         string marrone = "" + Emoji.Known.BrownCircle;
         List<string> palette = new List<string> { giallo, viola, blu, verde, rosso, arancione, marrone };
-        //List<string> chosenPalette = new List<string> {};
+        int colours = 0;
+        List<string> chosenPalette = new List<string> {};
+        
         string[] secretCode = new string[4];
         string[] guessCode = new string[4];
-
-        
 
         string path = @"punteggi.csv";
         if (!File.Exists(path)) //rende persistenti i dati - se manca, il programma "cancella" il testo presente nel file
@@ -52,11 +53,14 @@ internal class Program
         string[] dots = new string[attempts+1];
         string[] hints = new string[attempts+1];
 
+        colours = AnsiConsole.Prompt(new TextPrompt<int>("Con quanti colori vuoi giocare? (1-7)"));
+        chosenPalette = palette.GetRange(0, colours);
+
         //generazione del codice segreto
         for (int i = 0; i < secretCode.Length; i++)
         {
             Random code = new Random();
-            secretCode[i] = palette[code.Next(0, 7)];
+            secretCode[i] = chosenPalette[code.Next(0, colours)];
         }
         PcCode = string.Join(" ", secretCode);
 
@@ -69,8 +73,8 @@ internal class Program
                 AnsiConsole.WriteLine("\n\nScegli il tuo codice: ");
                 guessCode[j] = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
-                    .PageSize(palette.Count)
-                    .AddChoices(palette));
+                    .PageSize(chosenPalette.Count)
+                    .AddChoices(chosenPalette));
                 Console.Clear();
                 ourCode = string.Join(" ", guessCode);
                 Console.WriteLine($"\n{ourCode}");

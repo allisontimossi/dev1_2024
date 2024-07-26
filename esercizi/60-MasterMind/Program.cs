@@ -6,7 +6,7 @@ internal class Program
     private static void Main(string[] args)
     {
         Console.Clear();
-        int attempts = 10;
+        int attempts = 0;
         int score = attempts*10;
         int round = 0;
         string PcCode = "";
@@ -21,12 +21,11 @@ internal class Program
         string arancione = "" + Emoji.Known.OrangeCircle;
         string marrone = "" + Emoji.Known.BrownCircle;
         List<string> palette = new List<string> { giallo, viola, blu, verde, rosso, arancione, marrone };
-
+        //List<string> chosenPalette = new List<string> {};
         string[] secretCode = new string[4];
         string[] guessCode = new string[4];
 
-        string[] dots = new string[10];
-        string[] hints = new string[10];
+        
 
         string path = @"punteggi.csv";
         if (!File.Exists(path)) //rende persistenti i dati - se manca, il programma "cancella" il testo presente nel file
@@ -49,6 +48,9 @@ internal class Program
         AnsiConsole.MarkupLine("[bold]Benvenuto a Mastermind![/]");;
         var name = AnsiConsole.Prompt(new TextPrompt<string>("Contro chi sto giocando?"));
         AnsiConsole.WriteLine("");
+        attempts = AnsiConsole.Prompt(new TextPrompt<int>("In quanti turni pensi di battermi?")); //scelta turni
+        string[] dots = new string[attempts+1];
+        string[] hints = new string[attempts+1];
 
         //generazione del codice segreto
         for (int i = 0; i < secretCode.Length; i++)
@@ -80,12 +82,13 @@ internal class Program
             round++;
             attempts--;
 
-            //hint
+            //logica dei suggerimenti
             int white = 0, black = 0;
 
             bool[] visited = new bool[4];
             bool[] guessVisited = new bool[4];
 
+            //in caso colore-posizione corretti
             for (int i = 0; i < 4; i++)
             {
                 if (guessCode[i] == secretCode[i])
@@ -95,6 +98,7 @@ internal class Program
                     guessVisited[i] = true;
                 }
             }
+            //in caso colore-NONposizione corretti
             for (int i = 0; i < 4; i++)
             {
                 if (!guessVisited[i])
@@ -113,8 +117,7 @@ internal class Program
             string hint = $"{Emoji.Known.BlackCircle}: {black} - {Emoji.Known.WhiteCircle}: {white}";
             hints[round - 1] = hint;
             
-            //tabella
-
+            //tabella suggerimenti
             var table = new Table();
             table.AddColumn("Round");
             table.AddColumn("Pedine");
@@ -129,12 +132,12 @@ internal class Program
             AnsiConsole.Write(rule);
             AnsiConsole.Write(table);
 
-            //risultati del round
-
+            //fine del round
             if (ourCode == PcCode)
             {
                 AnsiConsole.WriteLine($"\nHai vinto in {round} turni!");
                 File.AppendAllText(path, $"\n{score} - {name} - {currentDate}/{currentMonth}-{currentHour}:{currentMinute}");
+
                 AnsiConsole.WriteLine($"Vuoi giocare di nuovo?");
                 var reStart = AnsiConsole.Prompt(
                     new SelectionPrompt<string>()
@@ -146,7 +149,15 @@ internal class Program
                 switch (reStart)
                 {
                     case "Sì":
-                    attempts = 10;
+                    attempts = AnsiConsole.Prompt(new TextPrompt<int>("In quanti turni pensi di battermi?"));
+                    round = 0;
+                    for (int i = 0; i < guessCode.Length; i++)
+                    {
+                        guessCode[i] = "";
+                        secretCode[i] = "";
+                        dots[i] = "";
+                        hints[i] = "";
+                    }
                     Console.Clear();
                     break;
                     case "No":
@@ -154,7 +165,6 @@ internal class Program
                     Console.Clear();
                     break;
                 }
-                break;
             }
             else if (attempts == 0)
             {
@@ -173,7 +183,15 @@ internal class Program
                 switch (reStart)
                 {
                     case "Sì":
-                    attempts = 10;
+                    attempts = AnsiConsole.Prompt(new TextPrompt<int>("In quanti turni pensi di battermi?"));
+                    round = 0;
+                    for (int i = 0; i < guessCode.Length; i++)
+                    {
+                        guessCode[i] = "";
+                        secretCode[i] = "";
+                        dots[i] = "";
+                        hints[i] = "";
+                    }
                     Console.Clear();
                     break;
                     case "No":

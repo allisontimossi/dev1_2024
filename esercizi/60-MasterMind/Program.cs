@@ -45,15 +45,15 @@ internal class Program
             rule.LeftJustified();
             AnsiConsole.Write(rule);
             AnsiConsole.WriteLine("");
-
-        AnsiConsole.MarkupLine("[bold]Benvenuto a Mastermind![/]");;
+        AnsiConsole.MarkupLine("[bold]Benvenuto a Mastermind![/]");
+        AnsiConsole.MarkupLine("Io scelgo un codice segreto e tu provi a indovinarlo.\n");;
         var name = AnsiConsole.Prompt(new TextPrompt<string>("Contro chi sto giocando?"));
         AnsiConsole.WriteLine("");
         attempts = AnsiConsole.Prompt(new TextPrompt<int>("In quanti turni pensi di battermi?")); //scelta turni
         string[] dots = new string[attempts+1];
         string[] hints = new string[attempts+1];
-
-        colours = AnsiConsole.Prompt(new TextPrompt<int>("Con quanti colori vuoi giocare? (1-7)"));
+        AnsiConsole.WriteLine("");
+        colours = AnsiConsole.Prompt(new TextPrompt<int>("Quanti colori posso scegliere [1-7]"));
         chosenPalette = palette.GetRange(0, colours);
 
         //generazione del codice segreto
@@ -166,7 +166,7 @@ internal class Program
                     break;
                     case "No":
                     Console.WriteLine("Ciao ciao!");
-                    Console.Clear();
+                    attempts = 0;
                     break;
                 }
             }

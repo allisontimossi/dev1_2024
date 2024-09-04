@@ -24,7 +24,11 @@ Se indovini il codice entro il numero di tentativi predeterminato hai vinto la p
 -  [x] Creare  menu multiselezione per scelta colori e inserimento in un array
 -  [x] Ciclo while [break: numero tentativi: 10; codiceCpu = codiceSegreto]: comparazione con for
 -  [x] Possibilità di tenere i risultati tracciati tramite tabella
--  [] Implementare menu inizio gioco
+-  [ ] Implementare menu inizio gioco
+
+### Refactoring codice
+-  [ ] Creazione nuovo repository: first complete project
+
 
 ## Wishlist
 -  [x] Readme con regole del gioco

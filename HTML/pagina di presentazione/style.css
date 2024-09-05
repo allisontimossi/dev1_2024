@@ -7,23 +7,36 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
     min-height: 100vh;
 }
 
 
-.titolo{
+#professione{
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid #ddd;
+    width: 100%;
 
+}
+.titolo{
     text-align: center;
     color: #CD5C08;
     font-family: "Maragsa", sans-serif;
-    padding: 20px;
+    
 }
+img{
+    width: 80%;
+    padding: 30px;
 
+}
 nav
 {
     width: 100%;
     background-color:  #80AF81;
     font-family: "Maragsa", sans-serif;
+    position: fixed;
+    top: 0;
 }
 
 .container {
@@ -33,17 +46,25 @@ nav
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 80%;
-
+    margin-top: 40px;
 }
 .intestazione{
     display: flex;
-    padding: 20px;
     justify-content: space-around;
     align-content: center;
     align-items: center;
+    border: 1px solid #ddd;
+    margin-top: 50px;
     }
 
-
+.calltoaction{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    
+}
 .navmenu{
     border: 1px solid #ddd;
     width: 100%;
@@ -69,8 +90,6 @@ ul {
     align-content: center;
 }
 
-
-
 h2{
     color: #CD5C08;
     font-family: "Maragsa", sans-serif;
@@ -85,12 +104,15 @@ li a {
 }
 li a:hover {
     background-color: #1A5319;}
+a:hover {
+    background-color: #80AF81;}
 footer {
     background-color:  #80AF81;
     color: #FEFAE0;
     padding: 8px;
     text-align: center;
     width: 100%;
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -100,30 +122,52 @@ footer {
         justify-content: space-between;
         }
     .titolo{
-        font-size: 50px;
-        }
+        font-size: 55px;
+        margin-bottom: 30px;
+    }
+    img {
+        width: 80%;
+    }
 }
 
 @media only screen and (min-width: 600px) {
     .titolo{
         font-size: 50px;
+        margin-bottom: 30px;
+        }
+        img {
+            width: 60%;
+            padding-right: 0;
         }
 }
 
 @media only screen and (min-width: 768px) {
     .titolo{
-        font-size: 50px;
+        font-size: 65px;
+        margin-bottom: 30px;
+        }
+        img {
+            width: 50%;
         }
 }
 
 @media only screen and (min-width: 992px) {
     .titolo{
-        font-size: 80px;
+        font-size: 70px;
+        }
+        img {
+            width: 40%;
         }
 }
 
 @media only screen and (min-width: 1200px) {
     .titolo{
-        font-size: 120px;
+        font-size: 100px;
         }
-}
+    img {
+        width: 30%;
+    }
+    .intestazione{
+        display: flex;
+        justify-content: center;
+}}

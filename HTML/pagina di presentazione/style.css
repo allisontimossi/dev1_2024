@@ -1,3 +1,7 @@
+
+html{
+    scroll-behavior: smooth;
+}
 body {
     margin: 0;
     padding: 0;
@@ -11,12 +15,12 @@ body {
     min-height: 100vh;
 }
 
-
 #professione{
     display: flex;
     justify-content: flex-start;
     border: 1px solid #ddd;
     width: 100%;
+    margin-left: -27px;
 
 }
 .titolo{
@@ -46,7 +50,7 @@ nav
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 80%;
-    margin-top: 40px;
+
 }
 .intestazione{
     display: flex;
@@ -54,7 +58,7 @@ nav
     align-content: center;
     align-items: center;
     border: 1px solid #ddd;
-    margin-top: 50px;
+    margin-top: 80px;
     }
 
 .calltoaction{
@@ -63,6 +67,7 @@ nav
     align-content: center;
     align-items: center;
     border: 1px solid #ddd;
+    margin-bottom: 40px;
     
 }
 .navmenu{

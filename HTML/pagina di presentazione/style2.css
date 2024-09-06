@@ -1,0 +1,137 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    font-family: "Garet", sans-serif;
+    color: #1A5319;
+}
+.corpoprincipale {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+
+    background-color: #FEFAE0;
+    
+    margin: 10%;
+    height:100%;
+    border: 2px solid #111;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    background-color:  #80AF81;
+    color: #FEFAE0;
+    width: 140%;
+    text-align: center;
+} 
+.intestazione{
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+}
+.foto{
+    border: 1px solid #ddd;
+}
+.titolo{
+    font-size: 55px;
+    text-align: center;
+    border: 1px solid #ddd;
+    width: 100%;
+    color: #CD5C08;
+    font-family: "Maragsa", sans-serif;
+
+}
+.navmenu{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+.navmenu a {
+    color: #1A5319;
+    text-decoration: none;
+}
+
+.calltoaction{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #111;
+    width: 100%;
+    }
+
+
+@media only screen and (max-width: 600px) {
+body{
+display: flex;
+align-content: center;
+
+}
+.intestazione{
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+.titolo{
+font-size: 55px;
+margin-bottom: 30px;
+}
+.foto {
+width: 120%;
+display: flex;
+justify-content: center;
+
+}
+
+/*
+@media only screen and (min-width: 600px) {
+.titolo{
+font-size: 50px;
+margin-bottom: 30px;
+}
+img {
+    width: 60%;
+    padding-right: 0;
+}
+}
+
+@media only screen and (min-width: 768px) {
+.titolo{
+font-size: 65px;
+margin-bottom: 30px;
+}
+img {
+    width: 10%;
+}
+}
+
+@media only screen and (min-width: 992px) {
+.titolo{
+font-size: 70px;
+}
+img {
+    width: 60%;
+}
+}
+
+@media only screen and (min-width: 1200px) {
+.titolo{
+font-size: 90px;
+}
+img {
+height: 100%;
+}
+.intestazione{
+display: flex;
+justify-content: center;
+}}   
+*/

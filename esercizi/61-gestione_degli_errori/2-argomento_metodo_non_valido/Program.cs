@@ -12,9 +12,5 @@
             Console.WriteLine($"ERRORE NON TRATTATO: {e.Message}");
             return;
         }
-    }
-    finally
-    {
-        Console.WriteLine("Fine del programma");
-    }
-}
+   
+}}

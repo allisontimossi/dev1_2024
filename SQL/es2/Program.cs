@@ -10,16 +10,19 @@ class Program
             SQLiteConnection.CreateFile(path); // crea il file del database
             SQLiteConnection connection = new SQLiteConnection($"Data Source={path};Version=3;"); // crea la connessione al database la versione 3 è un indicazione della versione del database e può esser personalizzata
             connection.Open(); // apre la connessione al database
-            string sql = @"
-                        CREATE TABLE categorie (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT UNIQUE);
-                        CREATE TABLE prodotti (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT UNIQUE, prezzo REAL, quantita INTEGER CHECK (quantita >= 0), id_categoria INTEGER,
-                        FOREIGN KEY (id_categoria) REFERENCES categorie(id));
-                        INSERT INTO categorie (nome) VALUES ('Adidas');
-                        INSERT INTO categorie (nome) VALUES ('Puma');
-                        INSERT INTO prodotti (nome, prezzo, quantita, id_categoria) VALUES ('Samba', 1, 10, 1);
-                        INSERT INTO prodotti (nome, prezzo, quantita, id_categoria) VALUES ('Superstar', 2, 20, 1);
-                        INSERT INTO prodotti (nome, prezzo, quantita, id_categoria) VALUES ('Palermo', 3, 30, 2);
-                        ";
+            string sql =  @"
+        CREATE TABLE IF NOT EXISTS tessere (id_tessera INTEGER PRIMARY KEY AUTOINCREMENT, data_registrazione DATE, stato BOOL);
+        CREATE TABLE IF NOT EXISTS utenti (id_utente INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, cognome TEXT, compleanno DATE, indirizzo TEXT, id_tessera INTEGER,
+        FOREIGN KEY (id_tessera) REFERENCES tessera(id_tessera));
+        CREATE TABLE IF NOT EXISTS autori (id_autore INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, cognome TEXT, data_nascita DATE, luogo_nascita TEXT);
+        CREATE TABLE IF NOT EXISTS generi (id_genere INTEGER PRIMARY KEY AUTOINCREMENT, nome_genere TEXT, scaffale INTEGER);
+        CREATE TABLE IF NOT EXISTS libri (id_libro INTEGER PRIMARY KEY AUTOINCREMENT, titolo TEXT, anno_pubblicazione INT, codice Isbn INT, disponibilità BOOL, id_autore INTEGER, id_genere INTEGER,
+        FOREIGN KEY (id_autore) REFERENCES autori(id_autore),
+        FOREIGN KEY (id_genere) REFERENCES generi(id_genere));
+        CREATE TABLE IF NOT EXISTS prestito (id_prestito INTEGER PRIMARY KEY, data_inizio_prestito DATE, data_fine_prestito DATE, id_utente INTEGER, id_libro INTEGER,
+        FOREIGN KEY (id_libro) REFERENCES libri (id_libro),
+        FOREIGN KEY (id_utente) REFERENCES utenti (id_utente));
+        ";
 
             SQLiteCommand command = new SQLiteCommand(sql, connection); // crea il comando sql da eseguire sulla connessione al database
             command.ExecuteNonQuery(); // esegue il comando sql sulla connessione al database

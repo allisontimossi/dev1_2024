@@ -34,4 +34,10 @@ class View{
         }
     }
 
+    public void ViewBooks(List<Libri> libri){
+        foreach (var libro in libri)
+        {
+            Console.WriteLine ($"Titolo: {libro.Titolo} - Disponibilità: {libro.Disponibilità}");
+        }
+    }
 }

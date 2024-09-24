@@ -10,8 +10,6 @@ class Database
         _connection.Open(); // Apertura della connessione
         string sql = 
         @"
-        
-        
         CREATE TABLE IF NOT EXISTS utenti (id_utente INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, cognome TEXT, data_registrazione DATE, indirizzo TEXT, stato BOOL);
         
         CREATE TABLE IF NOT EXISTS autori (id_autore INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, cognome TEXT, anno_nascita DATE, luogo_nascita TEXT);
@@ -27,7 +25,7 @@ class Database
         INSERT INTO generi (nome_genere, scaffale) VALUES ('Rosa', 'In basso al centro');
         INSERT INTO generi (nome_genere, scaffale) VALUES ('Biografico', 'In basso a destra');
 
-        CREATE TABLE IF NOT EXISTS libri (id_libro INTEGER PRIMARY KEY AUTOINCREMENT, titolo TEXT, annoPubblicazione INT, codiceISBN INT, disponibilità BOOL, id_autore INTEGER NOT NULL, id_genere INTEGER,
+        CREATE TABLE IF NOT EXISTS libri (id_libro INTEGER PRIMARY KEY AUTOINCREMENT, titolo TEXT, annoPubblicazione INT, disponibilità BOOL, id_autore INTEGER NOT NULL, id_genere INTEGER,
         FOREIGN KEY (id_autore) REFERENCES autori(id_autore),
         FOREIGN KEY (id_genere) REFERENCES generi(id_genere));
         
@@ -44,17 +42,17 @@ public void AddUser(string nome, string cognome, int dataRegistrazione, string i
     var command = new SQLiteCommand("INSERT INTO utenti (nome, cognome, data_registrazione, indirizzo, stato) VALUES (@nome, @cognome, @dataRegistrazione, @indirizzo, @stato)", _connection);
         command.Parameters.AddWithValue("@nome", nome);
         command.Parameters.AddWithValue("@cognome", cognome);
-        command.Parameters.AddWithValue("@dataRegistrazione", dataRegistrazione);
+        //command.Parameters.AddWithValue("@dataRegistrazione", dataRegistrazione);
         command.Parameters.AddWithValue("@indirizzo", indirizzo);
         command.Parameters.AddWithValue("@stato", stato);
         command.ExecuteNonQuery();  
 }
-public void AddBook(string titolo, int annoPubblicazione, int codiceISBN, bool disponibilità, int idAutore, int idGenere)
+public void AddBook(string titolo, int annoPubblicazione, bool disponibilità, int idAutore, int idGenere)
 {
-    var command = new SQLiteCommand("INSERT INTO libri (titolo, annoPubblicazione, codiceISBN, disponibilità, id_autore, id_genere) VALUES (@titolo, @annoPubblicazione, @codiceISBN, @disponibilità, @idAutore, @idGenere)", _connection);
+    var command = new SQLiteCommand("INSERT INTO libri (titolo, annoPubblicazione, disponibilità, id_autore, id_genere) VALUES (@titolo, @annoPubblicazione, @disponibilità, @idAutore, @idGenere)", _connection);
         command.Parameters.AddWithValue("@titolo", titolo);
         command.Parameters.AddWithValue("@annoPubblicazione", annoPubblicazione);
-        command.Parameters.AddWithValue("@codiceISBN", codiceISBN);
+
         command.Parameters.AddWithValue("@disponibilità", disponibilità);
         command.Parameters.AddWithValue("@idAutore", idAutore);
         command.Parameters.AddWithValue("@idGenere", idGenere);
@@ -103,5 +101,25 @@ public List <Autore> GetAuthors()
     }
     return autore; //restituzione della lista
 }
+
+
+public List<Libri> SearchBookByName(string titolo)
+{
+    var command = new SQLiteCommand($"SELECT * FROM libri WHERE titolo = '{titolo}'", _connection);
+    var reader = command.ExecuteReader();
+    var libro = new List<Libri>();
+    while (reader.Read())
+    {
+        libro.Add(new Libri
+        {
+            Id = reader.GetInt32(0),
+            Titolo = reader.GetString(1),
+            Anno = reader.GetInt32(2),
+            Disponibilità = reader.GetBoolean(3)
+        });
+    }
+    return libro;
+}
+
 }
                                                                 

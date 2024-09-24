@@ -11,15 +11,23 @@ class Controller{
         while(true){
             _view.ShowMainMenu();
             var input = _view.GetInput();
+
             if(input == "1"){
                 AddBook();
                 }
+
             if(input == "2"){
                 AddAuthor();
                 }
+
             if(input == "3"){
                 ViewAuthors();
                 }
+
+            if(input == "4"){
+                SearchBook();
+                }
+
             if(input == "5"){
                 AddUser();
                 }
@@ -27,9 +35,6 @@ class Controller{
     }
     private void AddUser(){
         var stato = true;
-
-        DateTime localDate = DateTime.Now;
-        var dataRegistrazione = localDate.ToString;
 
         Console.WriteLine("Inserisci nome utente");
         var nome = _view.GetInput();
@@ -50,7 +55,8 @@ class Controller{
 
 
         Console.WriteLine("Inserisci id autore del libro:\n----Premi 0 se non è presente l'autore che cerchi----");
-        ViewAuthors();
+        //ViewAuthors();
+        
         var idAutore = _view.GetIntInput();
         if (idAutore == 0){
             AddAuthor();
@@ -63,10 +69,9 @@ class Controller{
         Console.WriteLine("Inserisci anno di pubblicazione");
         var anno = _view.GetIntInput();
 
-        Console.WriteLine("Inserisci codice ISBN");
-        var codiceISBN = _view.GetIntInput();
 
-        _db.AddBook(titolo, anno, codiceISBN, disponibilità, idAutore, idGenere);
+
+        _db.AddBook(titolo, anno, disponibilità, idAutore, idGenere);
 
         Console.WriteLine("Libro inserito correttamente.\n");
     }
@@ -85,12 +90,24 @@ class Controller{
         _db.AddAuthor(nome, cognome, annoNascita, luogoNascita);
         Console.WriteLine("Autore inserito correttamente.\n");
     }
+
+
     private void ViewAuthors(){
         var autore = _db.GetAuthors();
         _view.ViewAuthors(autore);
     }
+
     private void ViewGenres(){
         var genere = _db.GetGenres();
         _view.ViewGenres(genere);
     }
+    private void SearchBook(){
+
+    Console.WriteLine("Inserisci il nome da cercare:");
+    var titolo = _view.GetInput();
+    var libro = _db.SearchBookByName(titolo);
+    _view.ViewBooks(libro);
+}
+
+
 }

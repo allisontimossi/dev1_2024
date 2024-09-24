@@ -15,6 +15,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "esercizi", "esercizi", "{95
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "60-MasterMind", "esercizi\60-MasterMind\60-MasterMind.csproj", "{1D72DFB9-76FB-4C37-AC4C-38357C0E74B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{B0832F1B-EE86-4018-84A3-CEB1B2A283CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "SQL\Biblioteca\Biblioteca.csproj", "{6EC782CC-27D2-43C0-A774-9B0E86F48EF8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,10 @@ Global
 		{1D72DFB9-76FB-4C37-AC4C-38357C0E74B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D72DFB9-76FB-4C37-AC4C-38357C0E74B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D72DFB9-76FB-4C37-AC4C-38357C0E74B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC782CC-27D2-43C0-A774-9B0E86F48EF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC782CC-27D2-43C0-A774-9B0E86F48EF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC782CC-27D2-43C0-A774-9B0E86F48EF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC782CC-27D2-43C0-A774-9B0E86F48EF8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -42,6 +50,7 @@ Global
 		{3AC59E0F-D1FE-4A15-9E9C-F9D1E0FCCC8C} = {DB56C0D8-0D1C-4ED9-8598-3B1BB614B70A}
 		{88587BF2-996F-442B-8496-1D4F9A59FD6D} = {DB56C0D8-0D1C-4ED9-8598-3B1BB614B70A}
 		{1D72DFB9-76FB-4C37-AC4C-38357C0E74B4} = {95F77184-E648-40EF-B933-771ACC8C74DD}
+		{6EC782CC-27D2-43C0-A774-9B0E86F48EF8} = {B0832F1B-EE86-4018-84A3-CEB1B2A283CD}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16222697-6E45-4A58-AE90-61D5D257756E}

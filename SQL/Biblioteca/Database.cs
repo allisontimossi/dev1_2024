@@ -1,9 +1,12 @@
+using System.Configuration;
+ // Importazione del namespace per utilizzare SQLite
 using System.Data.SQLite;
 class Database
 {
-    //impostiamo l'accesso privato
+    //Impostazione dell'accesso privato
     private SQLiteConnection _connection;
 
+//Inizializzazione del database per creare le tabelle Prestiti, Utenti, Libri, Autori
     public Database()
     {
         _connection = new SQLiteConnection("Data Source=database.db");  // Creazione di una connessione al database
@@ -36,17 +39,35 @@ class Database
         var command = new SQLiteCommand(sql, _connection);
         command.ExecuteNonQuery();  // Esecuzione del comando
     }
-    //nome TEXT, cognome TEXT, data_registrazione DATE, indirizzo TEXT, stato BOOL
-public void AddUser(string nome, string cognome, int dataRegistrazione, string indirizzo, bool stato)
+
+
+
+
+public void NuovoPrestito (string data_inizio_prestito, string data_fine_prestito, int idUtente, int idLibro, bool disponibilità)
 {
-    var command = new SQLiteCommand("INSERT INTO utenti (nome, cognome, data_registrazione, indirizzo, stato) VALUES (@nome, @cognome, @dataRegistrazione, @indirizzo, @stato)", _connection);
+    var command = new SQLiteCommand("INSERT INTO prestito (data_inizio_prestito, data_fine_prestito, id_utente, id_libro) VALUES (@data_inizio_prestito, @data_fine_prestito, @idUtente, @idLibro)", _connection);
+        command.Parameters.AddWithValue("@data_inizio_prestito", data_inizio_prestito);
+        command.Parameters.AddWithValue("@data_fine_prestito", data_fine_prestito);
+        command.Parameters.AddWithValue("@idUtente", idUtente);
+        command.Parameters.AddWithValue("@idLibro", idLibro);
+      command.ExecuteNonQuery();   
+
+    var command2 = new SQLiteCommand("UPDATE libri SET disponibilità = 0 WHERE idLibro = @idLibro", _connection);
+        command2.Parameters.AddWithValue("@idLibro, idLibro");
+        command2.ExecuteNonQuery(); 
+    
+}
+public void AddUser(string nome, string cognome, string dataRegistrazione, string indirizzo, bool stato)
+{
+    var command = new SQLiteCommand("INSERT INTO utenti (nome, cognome, data_registrazione, indirizzo, stato) VALUES (@nome, @cognome, @dataRegistrazione, @indirizzo,  @stato)", _connection);
         command.Parameters.AddWithValue("@nome", nome);
         command.Parameters.AddWithValue("@cognome", cognome);
-        //command.Parameters.AddWithValue("@dataRegistrazione", dataRegistrazione);
+        command.Parameters.AddWithValue("@dataRegistrazione", dataRegistrazione);
         command.Parameters.AddWithValue("@indirizzo", indirizzo);
         command.Parameters.AddWithValue("@stato", stato);
         command.ExecuteNonQuery();  
 }
+
 public void AddBook(string titolo, int annoPubblicazione, bool disponibilità, int idAutore, int idGenere)
 {
     var command = new SQLiteCommand("INSERT INTO libri (titolo, annoPubblicazione, disponibilità, id_autore, id_genere) VALUES (@titolo, @annoPubblicazione, @disponibilità, @idAutore, @idGenere)", _connection);
@@ -68,9 +89,30 @@ public void AddAuthor(string nome, string cognome, int annoNascita, string luogo
         command.ExecuteNonQuery();  
 }
 
+// Creazione di un comando per leggere gli utenti: creazione di una Lista Utenti + compliazione reader + restituzione Lista
+public List <User> GetUsers ()
+{
+    var command = new SQLiteCommand("SELECT * FROM utenti", _connection);
+    var reader = command.ExecuteReader();
+    var utenti = new List<User> ();
+
+    while (reader.Read()) 
+    {
+        utenti.Add(new User 
+        {
+            Id = reader.GetInt32(0),
+            Nome = reader.GetString(1),
+            Cognome = reader.GetString(2)
+        }
+        );
+    }
+    return utenti;
+}
+// Creazione di un comando per leggere gli generi: creazione di una Lista Generi + compliazione reader + restituzione Lista
+
 public List <Genere> GetGenres ()
 {
-    var command = new SQLiteCommand("SELECT * FROM generi ORDER BY nome_genere ASC", _connection);
+    var command = new SQLiteCommand("SELECT * FROM generi", _connection);
     var reader = command.ExecuteReader();
     var genere = new List<Genere>();
     while (reader.Read())
@@ -84,6 +126,7 @@ public List <Genere> GetGenres ()
     }
     return genere;
 }
+// Creazione di un comando per leggere gli Autori: creazione di una Lista Autori + compliazione reader + restituzione Lista
 
 public List <Autore> GetAuthors()
 {
@@ -102,24 +145,31 @@ public List <Autore> GetAuthors()
     return autore; //restituzione della lista
 }
 
+// Creazione di un comando per Cercare libri sugli Scaffali
+// JOIN tra tabella Libri e tabella Generi con sola visualizzazione Libro e Scaffale
 
 public List<Libri> SearchBookByName(string titolo)
 {
-    var command = new SQLiteCommand($"SELECT * FROM libri WHERE titolo = '{titolo}'", _connection);
+    var command = new SQLiteCommand($"SELECT libri.titolo, libri.disponibilità, generi.scaffale AS scaffale FROM libri JOIN generi ON libri.id_genere = generi.id_genere WHERE titolo = '{titolo}'", _connection);
     var reader = command.ExecuteReader();
     var libro = new List<Libri>();
     while (reader.Read())
     {
         libro.Add(new Libri
         {
-            Id = reader.GetInt32(0),
-            Titolo = reader.GetString(1),
-            Anno = reader.GetInt32(2),
-            Disponibilità = reader.GetBoolean(3)
+            Titolo = reader.GetString(0),
+            Disponibilità = reader.GetBoolean(1),
+            Scaffale = reader.GetString(2),
         });
     }
     return libro;
 }
-
+public void CloseConnection()
+{
+    if (_connection.State != System.Data.ConnectionState.Closed)
+    {
+        _connection.Close();
+    }
+}
 }
                                                                 

@@ -1,5 +1,5 @@
 ## Database Biblioteca
-Si vuole progettare un sistema per la gestione di una biblioteca.
+Si vuole progettare un sistema per la gestione di una biblioteca, con modello MVC + SQL.
 
 Gli utenti registrati al sistema forniscono nome, cognome, mail, password, recapito telefononico.
 
@@ -39,3 +39,25 @@ Da utente non ci sono ulteriori concatenazioni, mentre da prestiti si va a libro
         FOREIGN KEY (id_utente) REFERENCES utenti (id_utente));
         ";
 ```
+### Fase 2: obiettivi principali del programma (aula)
+Tra le funzioni elementari che il programma deve avere (allo scopo di consolidare l'argomento Classi + MVC):
+- [x] Aggiunta di un libro alla libreria (sapersi muovere tra Database-Controller-View)
+- [x] Aggiunta dell'id autore durante aggiunta libro alla libreria
+- [x] Cercare un libro su uno scaffale (saper usare JOIN tra due tabelle)
+- [x] Registrazione di un prestito (sviluppo della tabella centrale del database)
+- endere Indisponibile il libro al momento della prenotazione
+- [x] Documentare adeguatamente il codice per renderlo leggibile a terzi
+- [ ] 
+
+
+### Fase 3: implementazioni (casa)
+Andranno implementate:
+- [ ] Gestione di errori (nomi null o codici con x cifre)
+- [ ] Implementare più funzioni per rendere il database completo e user frienfly (aggiungendo metodi già consolidati):
+        - Modifica libro
+        - Cancella libro 
+        - Banna utente (se numero di giorni > 30): visualizzare se l'utente è in tempo per la restituzione del libro, bannarlo in caso contrario
+        - Restituzione libro (rende il libro nuovamente Disponibile)
+        - Visualizzare quando tornerà disponibile il libro 
+- [ ] Menu con spectre
+- [ ] Aggiornare il Readme con codice riorganizzato

@@ -6,7 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-
+//aggiunta di pacchetto per file Json
+using Newtonsoft.Json;
 
     public class ProdottiModel : PageModel
     {
@@ -19,14 +20,13 @@ using Microsoft.Extensions.Logging;
             logger.LogInformation("Prodotti caricati");
         }
         public IEnumerable<Prodotto> Prodotti { get; set; } 
-        public int numeroPagine { get; set; } //aggiunta di una proprietà per il numero di pagine
-
+        public int numeroPagine { get; set; }
         //public void OnGet() //richiamo dei contenuti
         public void OnGet(decimal? minPrezzo, decimal? maxPrezzo, int? pageIndex) //aggiunta di argomenti per filtrare i prodotti per prezzo  
         {
+            /*
             // i dati dei prodotti andranno presi da un Json o Database. 
             //per questa esercitazione va bene messo così:
-    
             var allProdotti = new List <Prodotto> //creazione Lista prodotti
             {
                 //popolazione della lista
@@ -46,29 +46,48 @@ using Microsoft.Extensions.Logging;
                 new Prodotto {Immagine = "img/img2.jpg", Id = 14,  Nome = "Prodotto 2", Prezzo = 220},
                 new Prodotto {Immagine = "img/img3.jpg", Id = 15,  Nome = "Prodotto 3", Prezzo = 1000}
             };
+            */
+
+            //per passare alla view la lista del file Json
+                var json = System.IO.File.ReadAllText("wwwroot/json/prodotti.json");
+                var allProdotti = JsonConvert.DeserializeObject<List<Prodotto>>(json);
+
             
-            //creazione di una lista per prodotti filtrati
+                //creazione di una lista per prodotti filtrati
+                var prodottiFiltrati = new List<Prodotto>();
 
-            List<Prodotto> prodottiFiltrati = new List<Prodotto>();
-
-            foreach (var prodotto in Prodotti)
-            {
-                bool includeProduct = true;
-
-                if (minPrezzo.HasValue && prodotto.Prezzo < minPrezzo.Value)
+                foreach (var prodotto in allProdotti)
                 {
-                    includeProduct = false;
-                }
+                    bool aggiungi = true;
 
-                if (maxPrezzo.HasValue && prodotto.Prezzo > maxPrezzo.Value)
-                {
-                    includeProduct = false;
-                }
+                    if (minPrezzo.HasValue)
+                    {
+                        if (prodotto.Prezzo < minPrezzo.Value)
+                        {
+                            aggiungi = false;
+                        }
+                    }
 
-                if (includeProduct)
-                {
-                    prodottiFiltrati.Add(prodotto);
+                    if (maxPrezzo.HasValue)
+                    {
+
+                        if (prodotto.Prezzo > maxPrezzo.Value)
+                        {
+                            aggiungi = false;
+                        }
+                    }
+                    if (aggiungi)
+                    {
+                        prodottiFiltrati.Add(prodotto);
+                    }
                 }
-            Prodotti = prodottiFiltrati;
+        Prodotti = prodottiFiltrati;
+        numeroPagine = (int)Math.Ceiling(Prodotti.Count() / 6.0);
+            //Math.Ceiling arrotonda il numero di pagine all'intero più vicino
+            //Prodotti.Count() restituisce il numero di prodotti
+            // 6.0 è il numero di prodotti per pagina
+
+        Prodotti = Prodotti.Skip(((pageIndex ?? 1)-1)*6).Take(6);
+        } 
         }
-    }
+    

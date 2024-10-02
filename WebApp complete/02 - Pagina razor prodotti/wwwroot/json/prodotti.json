@@ -1,0 +1,191 @@
+[
+  {
+    "Id": 1,
+    "Nome": "Prodotto 1",
+    "Prezzo": 160.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img1.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 2,
+    "Nome": "Prodotto 2",
+    "Prezzo": 200.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img2.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 3,
+    "Nome": "Prodotto 3",
+    "Prezzo": 300.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img3.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 4,
+    "Nome": "Prodotto 4",
+    "Prezzo": 150.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img1.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 5,
+    "Nome": "Prodotto 5",
+    "Prezzo": 250.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img2.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 6,
+    "Nome": "Prodotto 6",
+    "Prezzo": 350.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img3.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 7,
+    "Nome": "Prodotto 7",
+    "Prezzo": 400.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img1.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 8,
+    "Nome": "Prodotto 8",
+    "Prezzo": 500.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img2.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 9,
+    "Nome": "Prodotto 9",
+    "Prezzo": 600.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img3.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 10,
+    "Nome": "Prodotto 10",
+    "Prezzo": 550.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img1.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 11,
+    "Nome": "Prodotto 11",
+    "Prezzo": 650.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img2.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 12,
+    "Nome": "Prodotto 12",
+    "Prezzo": 120.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img3.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 13,
+    "Nome": "Prodotto 13",
+    "Prezzo": 750.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img1.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 14,
+    "Nome": "Prodotto 14",
+    "Prezzo": 220.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img2.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 15,
+    "Nome": "Prodotto 15",
+    "Prezzo": 1000.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img3.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 19,
+    "Nome": "Prodotto 16",
+    "Prezzo": 550.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img/img1.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 17,
+    "Nome": "Prodotto 22",
+    "Prezzo": 550.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": null,
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 18,
+    "Nome": "Prodotto 22",
+    "Prezzo": 333.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": null,
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 19,
+    "Nome": "Prodotto 22",
+    "Prezzo": 333.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "bg-hero.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 20,
+    "Nome": "Prodotto 22",
+    "Prezzo": 333.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img2.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  },
+  {
+    "Id": 21,
+    "Nome": "Prodotto 65",
+    "Prezzo": 333.0,
+    "Dettaglio": "Scarpe carine",
+    "Immagine": "img3.jpg",
+    "Categoria": null,
+    "Quantità": 0
+  }
+]

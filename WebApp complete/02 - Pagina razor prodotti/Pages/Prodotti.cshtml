@@ -6,21 +6,32 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div>
-    <form method ="get">
-            <div class="form-group">
-            <label for="minPrezzo">Min Prezzo</label>
-            <input type="text" class ="form-control" name="minPrezzo" />
-            </div>
-            <div class="form-group">
-            <label for="maxPrezzo">Max Prezzo</label>
-            <input type="text" class ="form-control" name="maxPrezzo" />
-            </div>
-            <button type="submit" class="btn btn-primary">Filtra</button>
-    </form>
 
-    <br>
-<table class ="table">
+<div>
+<form method="get">
+
+        <div class="form-group">
+            <div class="row">
+                <div class="col"> 
+                    <label for="minPrezzo" >Min prezzo</label>
+                    <input type="number" class="form-control focus-custom" name="minPrezzo" placeholder="Inserisci prezzo minimo"/>
+                </div>
+        
+        <div class="form-group">
+            <div class="col">
+                <label for="maxPrezzo">Max prezzo</label>
+                <input type="number" class="form-control focus-custom" name="maxPrezzo" placeholder="Inserisci prezzo massimo"/>
+            </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-outline-dark" mt-3">Filtra</button>
+        
+
+</form>
+</div>
+
+<br>
+<!--<table class ="table">
     <thread>
         <tr>
             <th></th>
@@ -31,15 +42,88 @@
         </tr>
     </thread>
     <tbody>
+        
         @foreach (var prodotto in Model.Prodotti)
         {
             <tr>
-                <td><img src="@prodotto.Immagine" alt ="@prodotto.Nome" width="200" height="200" /></td>
+                <td><img src="@prodotto.Immagine" alt ="@prodotto.Nome" width="200" height="200"  object-fit: cover /></td>
                 <td>@prodotto.Id</td>
                 <td>@prodotto.Nome</td>
                 <td>@prodotto.Prezzo</td>
-                <td><a asp-page ="ProdottoDettaglio" asp-route-id="@prodotto.Id" asp-route-nome="@prodotto.Nome" asp-route-prezzo="@prodotto.Prezzo" asp-route-immagine="@prodotto.Immagine">Dettaglio</a></td>
+                <td><a asp-page ="ProdottoDettaglio" asp-route-id="@prodotto.Id" >Dettaglio</a></td>
             </tr>
         }
+
     </tbody>
-</table></div>
+</table> -->
+
+<!-- Visualizzazione prodotti con cards-->
+
+<section  id="prodotti" class="container my-5 p-sm-5 text-center">
+<h2 class="mt-2 mb-5">Prodotti</h2>
+<div class="row">
+    @foreach (var prodotto in Model.Prodotti)
+    {
+    
+        <div class="col-md-4 mb-4 ">
+            <div class="card text-center mb-3 text-light">
+
+                    <div class="card-header bg-success">
+                    <h5 class="card-title"> @prodotto.Nome </h5>
+                    </div>
+        
+                <div class="card-body d-flex flex-column">
+                    <p> <img src="@prodotto.Immagine" alt ="@prodotto.Nome" width="300" height="300" /> </p>
+                    @if (prodotto.Prezzo <= 200)
+                {
+                    <h1 class="card-title pricing-card-title text-success ">@prodotto.Prezzo <small class="text-muted fw-light"> € </small></h1>  
+                }
+                else if (prodotto.Prezzo >=600)
+                {
+                    <h1 class="card-title pricing-card-title text-danger ">@prodotto.Prezzo <small class="text-muted fw-light"> € </small></h1> 
+                }
+                else
+                {       
+                    <h1 class="card-title pricing-card-title text-dark ">@prodotto.Prezzo <small class="text-muted fw-light"> € </small></h1> 
+                }
+                </div>
+
+                <div class="card-footer">
+                
+                <!-- Pulsante Modifica -->
+                        <a asp-page="ModificaProdotto" asp-route-id="@prodotto.Id" class="btn btn-outline-dark">
+                            Modifica</a>
+
+<a asp-page ="ProdottoDettaglio" asp-route-id="@prodotto.Id"> <button type="button" class="btn btn-outline-dark">Dettaglio</button></a>
+                
+                <a asp-page="CancellaProdotto" asp-route-id="@prodotto.Id" class="btn btn-outline-dark">
+                    Cancella</a>
+                </div>
+            </div>
+        </div>
+    
+    }</div>
+</section>
+
+<div class="d-flex justify-content-center">
+<form method="get">
+<!--per mantenere il valore del filtro dobbiamo passargli in modo invisibile il min prezzo e max prezzo-->
+    <input type="hidden" name="minPrezzo" value="@Request.Query["minPrezzo"]" />
+    <input type="hidden" name="maxPrezzo" value="@Request.Query["maxPrezzo"]" />
+
+    <!---->
+    @for (int i = 1; i <= Model.numeroPagine; i++)
+    {
+        <button type="submit" class="btn btn-outline-dark" name="pageIndex" value="@i">@i</button>
+    }
+
+</form> </div>
+<br>
+
+<div class="d-flex justify-content-center"> 
+<a asp-page="/index">
+    <button  class="btn btn-outline-dark" type="submit"> Torna a Home </button>
+</a>
+</div>
+
+</div>

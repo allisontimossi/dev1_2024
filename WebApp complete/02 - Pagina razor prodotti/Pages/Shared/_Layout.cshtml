@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="~/_02___Pagina_razor_prodotti.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">_02___Pagina_razor_prodotti</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Sito dove si vendono cose</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -28,11 +28,21 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Prodotti">Prodotti</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/AggiungiProdotto">Aggiungi prodotto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/ModificaProdotto">Modifica prodotto</a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </nav>
-    </header>
+
+    
+
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
@@ -50,5 +60,35 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
+
+<footer class="page-footer" style="filter:none">
+    <div></div>
+    <div class="main-footer">
+        <div class="footer-content-middle">
+            <div class="container-fluid">
+                <div class="footer content">
+                    <div class="container" style="padding-top: 50px; padding-bottom: 50px; max-width: 1000px;">
+                        <div class="row text-center">
+                            ::before
+                            <div class="col-sm-6">QUALCOSA</div>
+                            <div class="col-sm-6">QUALCOSA</div>
+                            <div class="col-sm-6"></div>
+                            <div class="col-sm-6"></div>
+                            ::after
+                        </div>
+                    </div>
+                    <div class="footer-content-bottom">
+                        <div class="container">
+                            <div class="row">
+                                QUALCOSA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</footer>
 </body>
 </html>

@@ -41,12 +41,9 @@ public List<string> Categorie { get; set; }
             }
     }
 
-    public IActionResult OnPost(string nome, decimal prezzo, string dettaglio, string immagine, int id, string categoria, int quantità)  //viene utilizzato per inviare i dati al server web
+    public IActionResult OnPost(string nome, decimal prezzo, string dettaglio, string immagine, int id, string categoria, int quantita)  //viene utilizzato per inviare i dati al server web
     {     
-        if (Codice != "1234")
-        {
-            return RedirectToPage("Error", new {message = "Codice non valido"});
-        }       
+            
         //i parametri vengono passati tramite il form della pagina web
         var json = System.IO.File.ReadAllText("wwwroot/json/prodotti.json");
         var prodotti = JsonConvert.DeserializeObject<List<Prodotto>>(json);
@@ -60,11 +57,10 @@ public List<string> Categorie { get; set; }
                 prodotto.Dettaglio = dettaglio;
                 prodotto.Immagine = immagine;
                 prodotto.Categoria= categoria;
-                prodotto.Quantità = quantità;
+                prodotto.Quantita = quantita;
                 break;
             }
         }
-
         System.IO.File.WriteAllText("wwwroot/json/prodotti.json", JsonConvert.SerializeObject(prodotti, Formatting.Indented));
         return RedirectToPage("/Prodotti"); 
     }

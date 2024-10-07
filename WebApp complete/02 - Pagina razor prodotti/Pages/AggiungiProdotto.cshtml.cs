@@ -11,10 +11,13 @@ using System.ComponentModel.DataAnnotations;
 public class AggiungiProdottoModel : PageModel
 {
     Prodotto Prodotto { get; set; } 
-    public List <string> Categorie { get; set; }
+    public List<string> Categorie { get; set; }
 
     [BindProperty]
     public string Codice { get; set; }  
+     [BindProperty]
+     [Required(ErrorMessage = "Ce l'hai un nome usalo")]
+     public string nome { get; set; }
     private readonly ILogger<AggiungiProdottoModel> _logger;
 
     public AggiungiProdottoModel(ILogger<AggiungiProdottoModel> logger)
@@ -22,24 +25,41 @@ public class AggiungiProdottoModel : PageModel
         _logger = logger;
     }
 
-    public void OnGet() //viene utilizzato per ricevere i dati dal server
+[HttpGet]
+    public void OnGet()
     {
-
+        var json = System.IO.File.ReadAllText("wwwroot/json/categorie.json");
+        Categorie = JsonConvert.DeserializeObject<List<string>>(json);
     }
-
-    public IActionResult OnPost(string nome, decimal prezzo, string dettaglio, int quantità, string immagine)  //viene utilizzato per inviare i dati al server web
-    {     
-        //i parametri vengono passati tramite il form della pagina web
-        var json = System.IO.File.ReadAllText("wwwroot/json/prodotti.json");
-        var prodotti = JsonConvert.DeserializeObject<List<Prodotto>>(json);
-        int id = 1;
-        if (prodotti.Count > 0)
+[HttpPost]
+    public IActionResult OnPost( decimal prezzo, string dettaglio, string immagine, int quantita, string categoria)
+    {
+        if (Codice != 1234)
         {
-            id = prodotti.Count+1;
+            ModelState.AddModelError("Error", new { message = "Codice non valido"});
         }
-        
-        prodotti.Add(new Prodotto {Id = id, Nome = nome, Prezzo = prezzo, Dettaglio = dettaglio, Immagine = immagine});
-        System.IO.File.WriteAllText("wwwroot/json/prodotti.json", JsonConvert.SerializeObject(prodotti, Formatting.Indented));
-        return RedirectToPage("Prodotti"); 
+
+        var json = System.IO.File.ReadAllText("wwwroot/json/prodotti.json");
+        var tuttiProdotti = JsonConvert.DeserializeObject<List<Prodotto>>(json);
+        int id = 1;
+        if (tuttiProdotti.Count > 0)
+        {
+            id = tuttiProdotti[tuttiProdotti.Count - 1].Id + 1;
+        }
+
+        tuttiProdotti.Add(new Prodotto
+        {
+            Id = id,
+            Nome = nome,
+            Prezzo = prezzo,
+            Dettaglio = dettaglio,
+            Immagine = immagine,
+            Quantita = quantita,
+            Categoria = categoria
+        });
+        System.IO.File.WriteAllText("wwwroot/json/prodotti.json", JsonConvert.SerializeObject(tuttiProdotti, Formatting.Indented));
+        return RedirectToPage("Prodotti");
+
+
     }
 }

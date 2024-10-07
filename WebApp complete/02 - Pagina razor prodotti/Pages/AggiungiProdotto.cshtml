@@ -6,14 +6,15 @@
 
 <h1>@ViewData["Title"]</h1>
 
-<div>
-    <form method="post">
+<div class="row g-3 needs-validation" novalidate>
 
-    
+    <form method="post" >
 
     <div class="form-group">
-    <label for="formGroupExampleInput">Nome
-    <input type="text" name ="nome" class="form-control" id="formGroupExampleInput" placeholder="Inserisci nome articolo" ></label>
+    <label asp-for="nome">Nome
+    <input type="text" asp-for ="nome" class="form-control" placeholder="Inserisci nome articolo" required ></label>
+    <span asp-validation-for="nome" class="text-danger">  </span>
+    
     </div>
 
     <div class="form-group">
@@ -32,6 +33,27 @@
             <input class="form-control" type="file" id="formFile" name="immagine"   />
     </div>
 
+    <div class="form-group mb-3">
+                    <label for="categoria">Categoria</label>
+                    <select class="form-select" name="categoria" >
+                        <option value="" disabled selected>Seleziona Categoria</option>
+                        @foreach (var categoria in Model.Categorie)
+                        {
+                            <option value="@categoria">@categoria</option>
+                        }
+                    </select>
+    </div>
+
+ <div class="form-group mb-3 mt-3">
+                    <label asp-for="Codice">
+                        <input asp-for="Codice" class="form-control" placeholder="Inserisci codice segreto"/>
+                        <span asp-validation-for="Codice" class="text-danger"></span>
+                    </label>
+                </div>
+
     <button type="submit" class ="btn btn-dark">Aggiungi</button>
 </form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
 </div>

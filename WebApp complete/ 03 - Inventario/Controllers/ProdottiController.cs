@@ -16,18 +16,11 @@ public class ProdottiController: Controller
             var json = System.IO.File.ReadAllText(prodottiFilePath);
             var prodotti = JsonConvert.DeserializeObject<List<Prodotto>>(json);
             return prodotti; //va messo un ritorno esplicito dei dati 
-        
         }
         else
         {
             return new List<Prodotto>();   
         }
-    }
-
-    public void Salva()
-    {
-        System.IO.File.WriteAllText(prodottiFilePath, JsonConvert.SerializeObject(prodotti, Formatting.Indented));
-        return RedirectToAction("Index");
     }
 
     //GET /Prodotti
@@ -63,7 +56,8 @@ public class ProdottiController: Controller
         }
         prodotti.Add(prodotto);
 
-        Salva();
+        System.IO.File.WriteAllText(prodottiFilePath, JsonConvert.SerializeObject(prodotti, Formatting.Indented));
+        return RedirectToAction("Index");
     }
 
     public IActionResult ModificaProdotto (int id)

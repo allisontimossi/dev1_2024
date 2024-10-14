@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03 - Inventario", "WebApp c
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04 - Webapp Prodotti", "WebApp complete\04 - Webapp Prodotti\04 - Webapp Prodotti.csproj", "{DB269931-3ED6-43B1-B823-278065817E0B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05-IdentityFramework", "WebApp complete\05-IdentityFramework\05-IdentityFramework.csproj", "{B451D054-E05C-41A3-AD7A-6896D8638BB4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{DB269931-3ED6-43B1-B823-278065817E0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB269931-3ED6-43B1-B823-278065817E0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB269931-3ED6-43B1-B823-278065817E0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B451D054-E05C-41A3-AD7A-6896D8638BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B451D054-E05C-41A3-AD7A-6896D8638BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B451D054-E05C-41A3-AD7A-6896D8638BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B451D054-E05C-41A3-AD7A-6896D8638BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +82,7 @@ Global
 		{7B908D89-E344-464D-818E-1D5BF25305A6} = {D2C5F6A5-FDA5-429F-B6B7-AF7E3FA4DF3F}
 		{088461B1-FD4C-4FB1-8126-14D55FEA2A6F} = {73DE8EB9-A2C5-43FA-929A-2545AA350C6C}
 		{DB269931-3ED6-43B1-B823-278065817E0B} = {73DE8EB9-A2C5-43FA-929A-2545AA350C6C}
+		{B451D054-E05C-41A3-AD7A-6896D8638BB4} = {73DE8EB9-A2C5-43FA-929A-2545AA350C6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {16222697-6E45-4A58-AE90-61D5D257756E}

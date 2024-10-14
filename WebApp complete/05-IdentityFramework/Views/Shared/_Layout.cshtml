@@ -25,15 +25,17 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Reserved" asp-action="Index">Pagina riservata</a>
-                        </li>
+
                         @if (User.Identity.IsAuthenticated)
                         {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Reserved" asp-action="Index">Bottone solo se sei registrato</a>
                             </li>
                         }
+                        
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reserved" asp-action="Index">Aggiungi ruolo</a>
+                        </li>
                         
                     </ul>
                     <partial name="_LoginPartial" />

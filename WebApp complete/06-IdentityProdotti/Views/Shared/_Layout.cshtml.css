@@ -1,0 +1,76 @@
+﻿html {
+  font-size: 14px;
+}
+
+.hero {
+  background: url('img/img.jpg') center center/cover no-repeat;
+  color: #fff;
+  position: relative;
+  height: 100vh; /* Aggiungi questa linea */
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-outline-dark{
+  transition: all 500ms ease;
+  backface-visibility: hidden;
+  padding: 15px 15px;
+  min-height: auto;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: top;
+  border-color: #fff;
+  background-color: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #DDA4A7;
+  color: #CD8D7A;
+  border-radius: 4px;
+  opacity: 1;
+  background-color: #FFFFFF !important;
+  border: 1px solid #DDA4A7 !important;
+}
+
+.btn-outline-dark:hover{
+  transition: all 500ms ease;
+  backface-visibility: hidden;
+  padding: 15px 15px;
+  min-height: auto;
+  text-transform: uppercase;
+  display: inline-block;
+  vertical-align: top;
+  border-color: #fff;
+  border: 1px solid #DDA4A7;
+  border-radius: 4px;
+  opacity: 1;
+  
+  background-color: #DDA4A7 0% 0% no-repeat padding-box;
+  background-color: #DDA4A7 !important;
+  border: 1px solid #DDA4A7 !important;
+   color: #fff;
+}
+.card-header{
+  background-color: #C3E2C2 !important;
+  border: 1px solid #C3E2C2 !important;
+  color: #CD8D7A;
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}

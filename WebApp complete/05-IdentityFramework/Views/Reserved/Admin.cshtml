@@ -1,0 +1,21 @@
+
+
+@{
+    ViewData["Title"] = "Gestione tipo utente";
+}
+
+<div>
+<div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+
+    <a asp-area="" asp-controller="Account" asp-action="AddToRoleAdmin"  class="btn btn-outline-success">Diventa amministratore</a>
+    <a asp-area="" asp-controller="Account" asp-action="RemoveFromRoleAdmin"  class="btn btn-outline-warning">Rimuoviti come amministratore</a>
+
+</div>
+
+<div class="btn-group btn-group-sm" role="group" aria-label="Small button group">
+
+    <a asp-area="" asp-controller="Account" asp-action="AddToRoleUser"  class="btn btn-outline-success">Diventa semplice utente</a>
+    <a asp-area="" asp-controller="Account" asp-action="RemoveFromRoleUser"  class="btn btn-outline-warning">Rimuoviti come semplice utente</a>
+
+</div>
+</div>

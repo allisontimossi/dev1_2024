@@ -38,6 +38,43 @@ using (var scope = app.Services.CreateScope())
         logger.LogError(ex, "Un errore è avvenuto durante la creazione dei ruoli");
     }
 }
+//metodo con due argometni: lista ruoli e lista utenti
+//inizializzazione di un qualcosa con dei valori di default
+//seed dell'amministatore del sito 
+//meglio caricarlo di default
+async Task SeedAdminUser(UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
+
+{//rende disponibile i ruoli
+    if (!await roleManager.RoleExistsAsync("Admin"))
+    {
+        await roleManager.CreateAsync(new IdentityRole("Admin"));
+    } 
+
+    //rende disponibile gli utenti
+    if (await userManager.FindByEmailAsync("info@admin.com")== null)
+    {
+        var user = new IdentityUser{
+            UserName = "info@admin.com",
+            Email = "info@admin.com",
+            EmailConfirmed = true,
+        };
+
+    var result = await userManager.CreateAsync(user, "Admin123!");
+    if (result.Succeeded)
+    {
+        await userManager.AddToRoleAsync(user, ("Admin"));
+    }
+    }
+}
+
+//configuriamo un altro using
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var userManager = services.GetRequiredService<UserManager<IdentityUser>>();
+    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+    await SeedAdminUser(userManager, roleManager);
+}  
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -56,6 +93,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseStatusCodePagesWithReExecute("/Home/Error");
 
 app.MapControllerRoute(
     name: "default",

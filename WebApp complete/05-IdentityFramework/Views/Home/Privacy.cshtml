@@ -1,6 +1,26 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
+<h1>@ViewData["Personalizzazione vista"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+
+<p> In realtà questa pagina serve per vedere che tipo di utente sono </p>
+    @if (User.IsInRole("User"))
+    {
+        <p> Sei un povero utente </p>
+    }
+    else 
+    {
+        <p> Non sei autorizzato </p>
+    }
+
+    @if(User.IsInRole("Admin"))
+    {
+        <p> Sei un potente amministratore </p>
+    }
+    else 
+    {
+        <p> Non sei autorizzato </p>
+    }
+
+    <p> Controlla il mio codice </p>
